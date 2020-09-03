@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+const PORT = process.env.PORT || 8080;
 
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
@@ -20,4 +21,4 @@ app.get('/:file', function(req, res) {
 });
 
 
-app.listen(8080);
+app.listen(PORT);
