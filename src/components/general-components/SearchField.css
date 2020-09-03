@@ -1,0 +1,8 @@
+.searchFieldContainer h4 {
+  text-align: center;
+}
+
+.searchFieldContainer button {
+  margin-top: 25px;
+  float: right;
+}
