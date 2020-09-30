@@ -1,0 +1,74 @@
+[
+  {
+    "methodology_name": "Scrum",
+    "description": "Scrum is a framework for project management that emphasizes teamwork, accountability and iterative progress toward a well-defined goal."
+  },
+  {
+    "methodology_name": "Waterfall",
+    "description": "The waterfall model is a breakdown of project activities into linear sequential phases, where each phase depends on the deliverables of the previous one and corresponds to a specialisation of tasks."
+  },
+  {
+    "methodology_name": "Spiral",
+    "description": "The spiral model is similar to the incremental development for a system, with more emphasis placed on risk analysis."
+  },
+  {
+    "methodology_name": "XP",
+    "description": "Extreme programming (XP) is a software development methodology which is intended to improve software quality and responsiveness to changing customer requirements."
+  },
+  {
+    "methodology_name": "Rational Unified Process",
+    "description": "RUP is not a single concrete prescriptive process, but rather an adaptable process framework, intended to be tailored by the development organizations and software project teams that will select the elements of the process that are appropriate for their needs."
+  },
+  {
+    "methodology_name": "Crystal",
+    "description": "Crystal method is an agile software development approach that focuses primarily on people and their interactions when working on a project rather than on processes and tools."
+  },
+  {
+    "methodology_name": "Cleanroom",
+    "description": "The cleanroom software engineering process is a software development process intended to produce software with a certifiable level of reliability."
+  },
+  {
+    "methodology_name": "Feature Driven Development",
+    "description": "An Agile methodology for developing software, Feature-Driven Development (FDD) is customer-centric, iterative, and incremental, with the goal of delivering tangible software results often and efficiently."
+  },
+  {
+    "methodology_name": "Model Driven Development",
+    "description": "Model-driven development uses visual modeling techniques to define data relationships, process logic, and build user interfaces, empowering both developers and business users to rapidly deliver applications without the need for code."
+  },
+  {
+    "methodology_name": "Domain Driven Development",
+    "description": "Domain-Driven Design is an approach to software development that centers the development on programming a domain model that has a rich understanding of the processes and rules of a domain."
+  },
+  {
+    "methodology_name": "Formal Methods",
+    "description": "Formal methods are mathematical approaches to solving software (and hardware) problems at the requirements, specification, and design levels."
+  },
+  {
+    "methodology_name": "Problem Driven Development",
+    "description": "Problem-Oriented Software Engineering provides a formal definition of problems, and a framework for associating problems with solutions through formal, logical arguments"
+  },
+  {
+    "methodology_name": "Cloud Computing",
+    "description": "Cloud computing enables convenient, on-demand network access to a shared pool of configurable computing resources, such as networks, servers, storage, applications, and services, which the cloud system can rapidly provision and release automatically."
+  },
+  {
+    "methodology_name": "Service Oriented Development",
+    "description": "Service-oriented Software Engineering (SOSE) is a software engineering methodology focused on the development of software systems by composition of reusable services (service-orientation) often provided by other service providers."
+  },
+  {
+    "methodology_name": "Aspect Oriented Development",
+    "description": "Aspect-oriented software development (AOSD) is a software development technology that seeks new modularizations of software systems in order to isolate secondary or supporting functions from the main program's business logic."
+  },
+  {
+    "methodology_name": "Value Driven Development",
+    "description": "Value-driven design (VDD) is a systems engineering strategy based on microeconomics which enables multidisciplinary design optimization. Value-driven design is being developed by the American Institute of Aeronautics and Astronautics, through a program committee of government, industry and academic representatives."
+  },
+  {
+    "methodology_name": "Product Driven Development",
+    "description": "In product-based development, apps are viewed from a perspective of whole-life-cycle-development as opposed to temporary app pipelines."
+  },
+  {
+    "methodology_name": "Agile",
+    "description": "Agile software development refers to a group of software development methodologies based on iterative development, where requirements and solutions evolve through collaboration between self-organizing cross-functional teams."
+  }
+]

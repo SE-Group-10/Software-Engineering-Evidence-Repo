@@ -1,0 +1,54 @@
+[
+  {
+    "method_name": "TDD",
+    "description": "Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: requirements are turned into very specific test cases, then the code is improved so that the tests pass."
+  },
+  {
+    "method_name": "BDD",
+    "description": "Behavior-driven development combines the general techniques and principles of TDD with ideas from domain-driven design and object-oriented analysis and design to provide software development and management teams with shared tools and a shared process to collaborate on software development."
+  },
+  {
+    "method_name": "Pair Programming",
+    "description": "Pair programming is an agile software development technique in which two programmers work together at one workstation. One, the driver, writes code while the other, the observer or navigator, reviews each line of code as it is typed in. The two programmers switch roles frequently."
+  },
+  {
+    "method_name": "Planning Poker",
+    "description": "Planning Poker is a consensus-based, gamified technique for estimating, mostly used to estimate effort or relative size of development goals in software development."
+  },
+  {
+    "method_name": "Daily Standup Meetings",
+    "description": "Some software development methodologies envision daily team meetings to make commitments to team members. The daily commitments allow participants to know about potential challenges as well as to coordinate efforts to resolve difficult and/or time-consuming issues."
+  },
+  {
+    "method_name": "Story Boards",
+    "description": "A Storyboard is a graphic organizer that provides the viewer with a high-level view of a project, it can help developers quickly get a sense of what work still needs to be completed."
+  },
+  {
+    "method_name": "User Story Mapping",
+    "description": "A User Story Map helps you arrange user stories into a useful model for understanding the functionality of a system, identifying holes and omissions in your backlog, and effectively plan holistic releases that deliver value to users and business with through releases."
+  },
+  {
+    "method_name": "Continuous Integration",
+    "description": "Continuous Integration (CI) is the practice of merging all developers' working copies to a shared mainline several times a day."
+  },
+  {
+    "method_name": "Retrospectives",
+    "description": "Retrospecives are meetings that are held at the end of an iteration in Agile software development (ASD). During the retrospective, the team reflects on what happened in the iteration and identifies actions for improvement going forward."
+  },
+  {
+    "method_name": "Burn Down Charts",
+    "description": "A Burn Down Chart is a graphical representation of work left to do versus time. The outstanding work (or backlog) is often on the vertical axis, with time along the horizontal. Burn down charts are a run chart of outstanding work. It is useful for predicting when all of the work will be completed."
+  },
+  {
+    "method_name": "Requirements Prioritisation",
+    "description": "Requirements Prioritisation used for determining which candidate requirements of a software product should be included in a certain release."
+  },
+  {
+    "method_name": "Version Control",
+    "description": "Version control (also known as revision control, source control, or source code management) is a class of systems responsible for managing changes to computer programs, documents, large web sites, or other collections of information."
+  },
+  {
+    "method_name": "Code Sharing",
+    "description": "The coded is shared between everyone in the team, giving access and control to anyone who has permission."
+  }
+]
