@@ -1,34 +1,37 @@
 import React from "react";
 import "./SearchFilters.css";
-import { Card, Container } from "react-bootstrap";
-import Accordion from 'react-bootstrap/Accordion';
+import { ProSidebar, SidebarHeader, SidebarContent, Menu, SubMenu, MenuItem } from 'react-pro-sidebar';
+import 'react-pro-sidebar/dist/css/styles.css';
+
 
 
 
 class SearchFilters extends React.Component {
-    render(){
-    return (
-        <Container className="queryFilter">
-        <Accordion defaultActiveKey="0" >
-            <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="0">
-                    Filters
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="0">
-                    <p> This is first filter </p>
-                </Accordion.Collapse>
-            </Card>
-            <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="1">
-                    Sort by:
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="1">
-                    <p> Sorting items </p>
-                </Accordion.Collapse>
-            </Card>
-        </Accordion>
-        </Container>
-    );
+    render() {
+        return (
+            <ProSidebar>
+                <SidebarHeader>
+                    <Menu iconShape="square">
+                        <SubMenu title="Search Filters:">
+                            <MenuItem>Component 1</MenuItem>
+                            <SubMenu title="Sub Component 1">
+                                {/* you can have more nested submenus ... */}
+                            </SubMenu>
+                        </SubMenu>
+                    </Menu>
+                </SidebarHeader>
+                <SidebarContent>
+                <Menu iconShape="square">
+                        <SubMenu title="Sort By:">
+                            <MenuItem>Component 1</MenuItem>
+                            <SubMenu title="Sub Component 1">
+                                {/* you can have more nested submenus ... */}
+                            </SubMenu>
+                        </SubMenu>
+                    </Menu>
+                </SidebarContent>
+            </ProSidebar>
+        );
     }
 }
 
