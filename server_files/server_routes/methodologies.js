@@ -55,7 +55,12 @@ router.patch("/:methodology_id", async (req, res) => {
   try {
     const updatedMethodologies = await Methodology.updateOne(
       { _id: req.params.methodology_id },
-      { $set: { title: req.body.title } }
+      {
+        $set: {
+          methodology_name: req.body.methodology_name,
+          description: req.body.description,
+        },
+      }
     );
     res.json(updatedMethodologies);
   } catch (err) {

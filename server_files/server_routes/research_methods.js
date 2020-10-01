@@ -55,8 +55,8 @@ router.delete("/:research_method_id", async (req, res) => {
 router.patch("/:research_method_id", async (req, res) => {
   try {
     const updatedResearchMethods = await ResearchMethods.updateOne(
-      { _id: req.params.methodology_id },
-      { $set: { title: req.body.title } }
+      { _id: req.params.research_method_id },
+      { $set: { research_method_name: req.body.research_method_name } }
     );
     res.json(updatedResearchMethods);
   } catch (err) {

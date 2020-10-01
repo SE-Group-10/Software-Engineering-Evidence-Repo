@@ -49,11 +49,16 @@ router.delete("/:method_id", async (req, res) => {
 });
 
 // UPDATE A SPECIFIC METHOD
-router.patch("/:user_id", async (req, res) => {
+router.patch("/:method_id", async (req, res) => {
   try {
     const updatedMethods = await Method.updateOne(
       { _id: req.params.method_id },
-      { $set: { title: req.body.title } }
+      {
+        $set: {
+          method_name: req.body.method_name,
+          description: req.body.description,
+        },
+      }
     );
     res.json(updatedMethods);
   } catch (err) {

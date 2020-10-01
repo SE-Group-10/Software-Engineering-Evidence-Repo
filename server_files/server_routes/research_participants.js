@@ -56,7 +56,7 @@ router.patch("/:research_participant_id", async (req, res) => {
   try {
     const updatedResearchParticipant = await ResearchParticipant.updateOne(
       { _id: req.params.research_participant_id },
-      { $set: { title: req.body.title } }
+      { $set: { participant_type: req.body.participant_type } }
     );
     res.json(updatedResearchParticipant);
   } catch (err) {

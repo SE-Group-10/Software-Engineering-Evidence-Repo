@@ -1,0 +1,66 @@
+[
+  {
+    "user_id": "TESTUSERSUBMITTER1",
+    "title": "Most common mistakes in test-driven development practice: Results from an online survey with developers",
+    "document_type": ["article"],
+    "authors": ["Aniche", "M F", "Testing", "MA Gerosa Software"],
+    "journals": ["ieeexplore.ieee.org"]
+  },
+  {
+    "user_id": "TESTUSERSUBMITTER2",
+    "title": "Does Test-Driven Development Really Improve Software Design Quality?",
+    "document_type": ["article"],
+    "authors": ["Aniche", "M F", "Testing", "MA Gerosa Software"],
+    "journals": ["Software", "IEEE"],
+    "volume": 25,
+    "volume_number": 2,
+    "start_page": 77,
+    "end_page": 84,
+    "publish_year": 2008
+  },
+  {
+    "user_id": "TESTUSERSUBMITTER3",
+    "title": "A prototype empirical evaluation of test driven development - Software Metrics, 2004. Proceedings. 10th International Symposium on",
+    "document_type": ["proceedings"],
+    "publish_year": 2008,
+    "publish_month": 7
+  },
+  {
+    "user_id": "TESTUSERSUBMITTER4",
+    "title": "An Empirical Assessment on Affective Reactions of Novice Developers when Applying Test-Driven Development",
+    "document_type": ["article"],
+    "authors": [
+      "Romano",
+      "Simone",
+      "Fucci",
+      "Davide",
+      "Baldassarre",
+      "Maria Teresa",
+      "Caivano",
+      "Danilo",
+      "Scanniello",
+      "Giuseppe"
+    ],
+    "journals": ["arXiv.org"],
+    "publish_year": 2008,
+    "publish_month": 6
+  },
+  {
+    "user_id": "TESTUSERSUBMITTER5",
+    "title": "Evaluating Test-Driven Development in an Industry-Sponsored Capstone Project",
+    "document_type": ["proceedings"],
+    "publisher": "IEEE",
+    "publish_year": 2009,
+    "publish_month": 2
+  },
+  {
+    "user_id": "TESTUSERSUBMITTER6",
+    "title": "A Comparative Case Study on the Impact of Test-Driven Development on Program Design and Test Coverage",
+    "document_type": ["article"],
+    "authors": ["Siniaalto", "Maria", "Abrahamsson", "Pekka"],
+    "journals": ["arXiv.org"],
+    "publisher": "IEEE",
+    "publish_year": 2017,
+    "publish_month": 10
+  }
+]
