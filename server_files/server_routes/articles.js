@@ -17,23 +17,29 @@ router.get("/", async (req, res) => {
 
 // SUBMIT AN ARTICLE
 router.post("/", async (req, res) => {
-  const methodology = await Methodology.findOne(req.body.methodology_id);
-  const method = await Method.findById(req.body.methodology_id);
-
   const article = new Article({
+    submitter_user_id: req.body.user_id,
     stage: "moderation",
     document_type: req.body.document_type,
     title: req.body.title,
-    author: req.body.author,
+    authors: req.body.authors,
     publisher: req.body.publisher,
+    journals: req.body.journals,
     volume: req.body.volume,
     volume_number: req.body.volume_number,
     start_page: req.body.start_page,
     end_page: req.body.end_page,
-    publish_year: req.body.publish_year,
     article_link: req.body.article_link,
-    datetime_updated: Date.now,
   });
+
+  if (req.body.publish_year && req.body.publish_month) {
+    article.publish_date = new Date(
+      req.body.publish_year,
+      req.body.publish_month
+    );
+  } else if (req.body.publish_year && !req.body.publish_month) {
+    article.publish_date = new Date(req.body.publish_year, 0);
+  }
 
   try {
     const savedArticle = await article.save();
@@ -58,28 +64,6 @@ router.get("/:article_id", async (req, res) => {
   try {
     const article = await Article.findById(req.params.article_id);
     res.json(article);
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
-
-// SEARCH FOR ARTICLE BASED ON SEARCH TYPE
-router.get("/search_article/:search_type", async (req, res) => {
-  let searchQuery = {};
-
-  switch (req.params.search_type) {
-    case "design":
-      break;
-
-    default:
-      searchQuery = {
-        title: { $regex: `%${req.body.title}%`, options: "i" },
-      };
-      break;
-  }
-  try {
-    const updatedArticle = await Article.find(searchQuery);
-    res.json(updatedArticle);
   } catch (err) {
     res.json({ message: err });
   }
