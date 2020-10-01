@@ -6,6 +6,7 @@ import SearchPage from "./pages/SearchPage.js";
 import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import SearchResultPage from "./pages/SearchResultPage";
 import { Container } from "react-bootstrap";
 import { Switch, Route, Redirect } from "react-router-dom";
 
@@ -26,6 +27,9 @@ function App() {
           {/* Register-Login Pages */}
           <Route path="/login" component={LoginPage} />
           <Route path="/sign-up" component={SignUpPage} />
+
+          {/* Search Results Page */}
+          <Route path="/search-result" component={SearchResultPage}/>
         </Switch>
       </Container>
     </div>

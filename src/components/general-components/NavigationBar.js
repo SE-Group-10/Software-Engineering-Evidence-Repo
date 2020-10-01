@@ -35,7 +35,10 @@ const NavigationBar = () => {
           <LinkContainer to="/search">
             <Nav.Link> Advanced Search</Nav.Link>
           </LinkContainer>
-          <Nav.Link id="q_search">Quick Search: </Nav.Link> 
+          <LinkContainer to="/search-result">
+            <Nav.Link> Result</Nav.Link>
+          </LinkContainer>
+            <Nav.Link id="q_search">Quick Search: </Nav.Link> 
           <Form inline id="navbar-search">
             <FormControl type="text" placeholder="Article, book or website" className="mr-sm-2" />
             <Button variant="outline-success"><img src={require("../../assets/icons/search_icon.svg")} id="search_icon"/></Button>
