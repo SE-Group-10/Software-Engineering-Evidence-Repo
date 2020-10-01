@@ -1,6 +1,5 @@
 import React from "react";
 import SearchFilters from "../search-result-components/SearchFilters";
-import SearchField from "../general-components/SearchField";
 
 const SearchResultPage = () => {
   return (

@@ -1,0 +1,772 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page Renders properly 1`] = `
+<div
+  className="container"
+  style={
+    Object {
+      "color": "#00994C",
+      "paddingTop": "10vh",
+      "textAlign": "center",
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    className="homepageHeader"
+  >
+    <h1>
+       Welcome to SEER! 
+    </h1>
+    <br />
+    <h2>
+       A repository for Software Engineers to search for articles, 
+      <br />
+      journals or research papers for evidences to support their ideas.
+    </h2>
+  </div>
+  <div
+    className="homepageCTA"
+    style={
+      Object {
+        "marginTop": "10vh",
+      }
+    }
+  >
+    <h2>
+       What are you looking for? 
+    </h2>
+    <form
+      className="form-inline"
+      id="navbar-search"
+      style={
+        Object {
+          "display": "block",
+          "marginLeft": "auto",
+          "marginRight": "auto",
+        }
+      }
+    >
+      <input
+        className="mr-sm-2 form-control"
+        placeholder="Search for articles, books or researches"
+        style={
+          Object {
+            "width": "30vw",
+          }
+        }
+        type="text"
+      />
+      <button
+        className="btn btn-outline-success"
+        disabled={false}
+        type="button"
+      >
+         
+        <a
+          href="/search-result"
+          onClick={[Function]}
+        >
+          <img
+            id="search_icon"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "search_icon.svg",
+              }
+            }
+          />
+           
+        </a>
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Login Page Renders properly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <form
+      className=""
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicEmail"
+        >
+          Email address
+        </label>
+        <input
+          className="form-control"
+          id="formBasicEmail"
+          placeholder="Enter email"
+          type="email"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicPassword"
+        >
+          Password
+        </label>
+        <input
+          className="form-control"
+          id="formBasicPassword"
+          placeholder="Password"
+          type="password"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="formBasicCheckbox"
+            type="checkbox"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="formBasicCheckbox"
+            title=""
+          >
+            Remember Me
+          </label>
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Search Page Renders properly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="searchFieldContainer container-fluid"
+  >
+    <div
+      className="container"
+    >
+      <form
+        className=""
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="form-label"
+            htmlFor="descriptionSearch"
+          >
+            <h4>
+              Description
+            </h4>
+          </label>
+          <input
+            className="form-control"
+            id="descriptionSearch"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-sm-2"
+            >
+              <label
+                className="form-label"
+                htmlFor="dateRangeSearch"
+              >
+                <h4>
+                  Date Range:
+                </h4>
+              </label>
+            </div>
+            <div
+              className="col"
+            >
+              <input
+                className="form-control"
+                id="dateRangeSearch"
+                type="date"
+              />
+            </div>
+            <div
+              className="col-sm-1"
+            >
+              <h4>
+                To
+              </h4>
+            </div>
+            <div
+              className="col"
+            >
+              <input
+                className="form-control"
+                id="dateRangeSearch"
+                type="date"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-1"
+          >
+            <h4>
+              If
+            </h4>
+          </div>
+          <div
+            className="col"
+          >
+            <select
+              className="form-control"
+            >
+              <option
+                value="0"
+              >
+                Name of Field
+              </option>
+              <option
+                value="article_title"
+              >
+                Article Title
+              </option>
+              <option
+                value="article_name"
+              >
+                Article Name
+              </option>
+              <option
+                value="article_author"
+              >
+                Author
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <select
+              className="form-control"
+            >
+              <option
+                value="0"
+              >
+                Operator
+              </option>
+              <option
+                value="contains"
+              >
+                Contains
+              </option>
+              <option
+                value="not_contains"
+              >
+                Does Not Contain
+              </option>
+              <option
+                value="begins_with"
+              >
+                Begins With
+              </option>
+              <option
+                value="equals"
+              >
+                Is Equal To
+              </option>
+              <option
+                value="less_than"
+              >
+                Is Less Than
+              </option>
+              <option
+                value="less_than_equals"
+              >
+                Is Less Than Or Equal To
+              </option>
+              <option
+                value="more_than"
+              >
+                Is More Than
+              </option>
+              <option
+                value="more_than_equals"
+              >
+                Is More Than Or Equal To
+              </option>
+            </select>
+          </div>
+          <div
+            className="col"
+          >
+            <select
+              className="form-control"
+            >
+              <option>
+                Value
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-1"
+          >
+            <a>
+              <img
+                alt="add-search"
+                src={
+                  Object {
+                    "ReactComponent": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "render": [Function],
+                    },
+                    "__esModule": true,
+                    "default": "plus_icon.svg",
+                  }
+                }
+              />
+            </a>
+          </div>
+          <div
+            className="col-sm-1"
+          >
+            <a>
+              <img
+                alt="add-search"
+                src={
+                  Object {
+                    "ReactComponent": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "render": [Function],
+                    },
+                    "__esModule": true,
+                    "default": "dash_icon.svg",
+                  }
+                }
+              />
+            </a>
+          </div>
+        </div>
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Search Result Page Renders properly 1`] = `
+<div>
+  <h1
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    Query Results: 
+  </h1>
+  <div
+    className="pro-sidebar"
+    style={
+      Object {
+        "width": undefined,
+      }
+    }
+  >
+    <div
+      className="pro-sidebar-inner"
+    >
+      <div
+        className="pro-sidebar-layout"
+      >
+        <div
+          className="pro-sidebar-header"
+        >
+          <nav
+            className="pro-menu shaped square"
+          >
+            <ul>
+              <li
+                className="pro-menu-item pro-sub-menu"
+              >
+                <div
+                  className="pro-inner-item"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <span
+                    className="pro-item-content"
+                  >
+                    Search Filters:
+                  </span>
+                  <span
+                    className="pro-arrow-wrapper"
+                  >
+                    <span
+                      className="pro-arrow"
+                    />
+                  </span>
+                </div>
+                <div
+                  className="react-slidedown pro-inner-list-item"
+                  onTransitionEnd={[Function]}
+                >
+                  <div>
+                    <ul>
+                      <li
+                        className="pro-menu-item"
+                      >
+                        <div
+                          className="pro-inner-item"
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <span
+                            className="pro-item-content"
+                          >
+                            Component 1
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        className="pro-menu-item pro-sub-menu"
+                      >
+                        <div
+                          className="pro-inner-item"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <span
+                            className="pro-item-content"
+                          >
+                            Sub Component 1
+                          </span>
+                          <span
+                            className="pro-arrow-wrapper"
+                          >
+                            <span
+                              className="pro-arrow"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          className="react-slidedown pro-inner-list-item"
+                          onTransitionEnd={[Function]}
+                        >
+                          <div>
+                            <ul />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div
+          className="pro-sidebar-content"
+        >
+          <nav
+            className="pro-menu shaped square"
+          >
+            <ul>
+              <li
+                className="pro-menu-item pro-sub-menu"
+              >
+                <div
+                  className="pro-inner-item"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <span
+                    className="pro-item-content"
+                  >
+                    Sort By:
+                  </span>
+                  <span
+                    className="pro-arrow-wrapper"
+                  >
+                    <span
+                      className="pro-arrow"
+                    />
+                  </span>
+                </div>
+                <div
+                  className="react-slidedown pro-inner-list-item"
+                  onTransitionEnd={[Function]}
+                >
+                  <div>
+                    <ul>
+                      <li
+                        className="pro-menu-item"
+                      >
+                        <div
+                          className="pro-inner-item"
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <span
+                            className="pro-item-content"
+                          >
+                            Component 1
+                          </span>
+                        </div>
+                      </li>
+                      <li
+                        className="pro-menu-item pro-sub-menu"
+                      >
+                        <div
+                          className="pro-inner-item"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <span
+                            className="pro-item-content"
+                          >
+                            Sub Component 1
+                          </span>
+                          <span
+                            className="pro-arrow-wrapper"
+                          >
+                            <span
+                              className="pro-arrow"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          className="react-slidedown pro-inner-list-item"
+                          onTransitionEnd={[Function]}
+                        >
+                          <div>
+                            <ul />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label="overlay"
+      className="overlay"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="button"
+      tabIndex={0}
+    />
+  </div>
+</div>
+`;
+
+exports[`Sign Up Renders properly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <form
+      className=""
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicFirstName"
+        >
+          First Name
+        </label>
+        <input
+          className="form-control"
+          id="formBasicFirstName"
+          placeholder="Enter First Name"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicLastName"
+        >
+          Last Name
+        </label>
+        <input
+          className="form-control"
+          id="formBasicLastName"
+          placeholder="Enter Last Name"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formUsername"
+        >
+          Username
+        </label>
+        <input
+          className="form-control"
+          id="formUsername"
+          placeholder="Enter Username"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicEmail"
+        >
+          Email address
+        </label>
+        <input
+          className="form-control"
+          id="formBasicEmail"
+          placeholder="Enter email"
+          type="email"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicPassword"
+        >
+          Password
+        </label>
+        <input
+          className="form-control"
+          id="formBasicPassword"
+          placeholder="Password"
+          type="password"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicEmail"
+        >
+          Affilitiation
+        </label>
+        <input
+          className="form-control"
+          id="formBasicEmail"
+          placeholder="Affilitiation"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="formBasicRadiobox"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="formBasicRadiobox"
+            title=""
+          >
+            Moderator
+          </label>
+        </div>
+      </div>
+      <div
+        className="form-group"
+      >
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="formBasicRadiobox"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="formBasicRadiobox"
+            title=""
+          >
+            Admin
+          </label>
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        type="submit"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+</div>
+`;
