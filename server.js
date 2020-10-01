@@ -10,12 +10,12 @@ const password = "Abc123456";
 const dbname = "SE-Database";
 
 // Import Routes
-const usersRoute = require("./server_routes/users");
-const articlesRoute = require("./server_routes/articles");
-const methodologiesRoute = require("./server_routes/methodologies");
-const methodsRoute = require("./server_routes/methods");
-const researchMethodsRoute = require("./server_routes/research_methods");
-const researchParticipantsRoute = require("./server_routes/research_participants");
+const usersRoute = require("./server_files/server_routes/users");
+const articlesRoute = require("./server_files/server_routes/articles");
+const methodologiesRoute = require("./server_files/server_routes/methodologies");
+const methodsRoute = require("./server_files/server_routes/methods");
+const researchMethodsRoute = require("./server_files/server_routes/research_methods");
+const researchParticipantsRoute = require("./server_files/server_routes/research_participants");
 
 // Middleware
 app.use(cors());
@@ -43,6 +43,10 @@ app.get("/static/js/:file", function (req, res) {
 
 app.get("/static/css/:file", function (req, res) {
   res.sendFile(path.join(__dirname + "/build/static/css/" + req.params.file));
+});
+
+app.get("/static/media/:file", function (req, res) {
+  res.sendFile(path.join(__dirname + "/build/static/media/" + req.params.file));
 });
 
 app.get("/:file", function (req, res) {
