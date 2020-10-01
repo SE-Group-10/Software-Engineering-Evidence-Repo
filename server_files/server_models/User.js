@@ -1,5 +1,17 @@
 const mongoose = require("mongoose");
 
+const SavedSearchSchema = new mongoose.Schema({
+  search_name: { type: String, required: true },
+  search_string: {
+    type: String,
+    required: true,
+  },
+  datetime_saved: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
 const UserSchema = mongoose.Schema({
   user_type: {
     type: String,
@@ -29,17 +41,7 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  saved_searches: new mongoose.Schema({
-    search_name: { type: String, required: true },
-    search_string: {
-      type: String,
-      required: true,
-    },
-    datetime_saved: {
-      type: Date,
-      default: Date.now,
-    },
-  }),
+  saved_searches: [SavedSearchSchema],
   datetime_created: {
     type: Date,
     default: Date.now,

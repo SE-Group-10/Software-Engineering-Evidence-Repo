@@ -16,6 +16,7 @@ const methodologiesRoute = require("./server_files/server_routes/methodologies")
 const methodsRoute = require("./server_files/server_routes/methods");
 const researchMethodsRoute = require("./server_files/server_routes/research_methods");
 const researchParticipantsRoute = require("./server_files/server_routes/research_participants");
+const searchRoute = require("./server_files/server_routes/search");
 
 // Middleware
 app.use(cors());
@@ -31,6 +32,7 @@ app.use("/methodologies", methodologiesRoute);
 app.use("/methods", methodsRoute);
 app.use("/research_methods", researchMethodsRoute);
 app.use("/research_participants", researchParticipantsRoute);
+app.use("/search_article", searchRoute);
 
 // Setting up Files with the Build
 app.get("/", function (req, res) {
