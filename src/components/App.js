@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import { Container } from "react-bootstrap";
 import { Switch, Route, Redirect } from "react-router-dom";
+import AnalystQueuePage from "./pages/AnalystQueuePage";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
           {/* Register-Login Pages */}
           <Route path="/login" component={LoginPage} />
           <Route path="/sign-up" component={SignUpPage} />
+
+          {/* Analyst Pages */}
+          <Route path="/analyst-queue" component={AnalystQueuePage} />
+          
         </Switch>
       </Container>
     </div>

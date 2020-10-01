@@ -33,6 +33,9 @@ const NavigationBar = () => {
           <LinkContainer to="/sign-up">
             <Nav.Link>Sign Up</Nav.Link>
           </LinkContainer>
+          <LinkContainer to="/analyst-queue">
+            <Nav.Link>Analyst Queue</Nav.Link>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
