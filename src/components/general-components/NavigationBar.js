@@ -30,7 +30,7 @@ const NavigationBar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <LinkContainer to="/dashboard">
+          <LinkContainer to="/analyst-queue">
             <Nav.Link className="nav-link">Dashboard</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/search">
@@ -41,6 +41,7 @@ const NavigationBar = () => {
             <FormControl type="text" placeholder="Article, book or website" className="mr-sm-2" />
             <Button variant="outline-success"> <Link to="search-result"><img src={require("../../assets/icons/search_icon.svg")} id="search_icon"/> </Link></Button>
           </Form>
+
         </Nav>
         <img src={require("../../assets/icons/placeholder_circle.png")} id="login_placeholder" />
         <LinkContainer to="/sign-up">
