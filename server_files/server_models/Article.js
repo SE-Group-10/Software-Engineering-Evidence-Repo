@@ -162,6 +162,9 @@ const ArticleSchema = mongoose.Schema({
   article_link: {
     type: String,
   },
+  assigned_to: {
+    type: String,
+  },
   datetime_submitted: {
     type: Date,
     default: Date.now,
