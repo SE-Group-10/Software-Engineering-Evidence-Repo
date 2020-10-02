@@ -1,57 +1,93 @@
 import React from "react";
 import "./NavigationBar.css";
-import {
-  Nav,
-  Navbar,
-  Form,
-  FormControl,
-  Button
-} from "react-bootstrap";
+import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 
-const NavigationBar = () => {
-  return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      className="navBar"
-    >
-      <LinkContainer to="/home">
-        <Navbar.Brand>
+class NavigationBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+    };
+  }
+
+  // Updates States for Register Forms
+  formOnChangeHandler = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  // Function to do a quick search for a title
+  onSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  render() {
+    return (
+      <Navbar collapseOnSelect expand="lg" className="navBar">
+        <LinkContainer to="/home">
+          <Navbar.Brand>
+            <img
+              alt="SEER Logo"
+              src={require("../../assets/logos/Logo_Style1.png")}
+              className="d-inline-block align-top"
+              id="navbar_logo"
+            />
+          </Navbar.Brand>
+        </LinkContainer>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <LinkContainer to="/dashboard">
+              <Nav.Link className="nav-link">Dashboard</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/search">
+              <Nav.Link> Advanced Search</Nav.Link>
+            </LinkContainer>
+            <Nav.Link id="q_search">Quick Search: </Nav.Link>
+            <Form inline id="navbar-search" onSubmit={this.onSubmit}>
+              <Form.Group controlId="title">
+                <FormControl
+                  required
+                  type="text"
+                  placeholder="Article, book or website"
+                  className="mr-sm-2"
+                  value={this.state.title}
+                  onChange={this.formOnChangeHandler}
+                />
+                <Link
+                  to={{
+                    pathname: "search-result",
+                    search: `?search_type=any&title=${this.state.title}`,
+                  }}
+                >
+                  <Button variant="outline-success" type="submit">
+                    {" "}
+                    <img
+                      src={require("../../assets/icons/search_icon.svg")}
+                      id="search_icon"
+                    />{" "}
+                  </Button>
+                </Link>
+              </Form.Group>
+            </Form>
+          </Nav>
           <img
-            alt="SEER Logo"
-            src={require("../../assets/logos/Logo_Style1.png")}
-            className="d-inline-block align-top"
-            id="navbar_logo"
+            src={require("../../assets/icons/placeholder_circle.png")}
+            id="login_placeholder"
           />
-        </Navbar.Brand>
-      </LinkContainer>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <LinkContainer to="/dashboard">
-            <Nav.Link className="nav-link">Dashboard</Nav.Link>
+          <LinkContainer to="/sign-up">
+            <Button id="nav_button">Sign Up</Button>
           </LinkContainer>
-          <LinkContainer to="/search">
-            <Nav.Link> Advanced Search</Nav.Link>
+          <LinkContainer to="/login">
+            <Button id="nav_button">Login</Button>
           </LinkContainer>
-            <Nav.Link id="q_search">Quick Search: </Nav.Link> 
-          <Form inline id="navbar-search">
-            <FormControl type="text" placeholder="Article, book or website" className="mr-sm-2" />
-            <Button variant="outline-success"> <Link to="search-result"><img src={require("../../assets/icons/search_icon.svg")} id="search_icon"/> </Link></Button>
-          </Form>
-        </Nav>
-        <img src={require("../../assets/icons/placeholder_circle.png")} id="login_placeholder" />
-        <LinkContainer to="/sign-up">
-          <Button id="nav_button">Sign Up</Button>
-        </LinkContainer>
-        <LinkContainer to="/login">
-          <Button id="nav_button">Login</Button>
-        </LinkContainer>
-      </Navbar.Collapse>
-    </Navbar>
-  );
-};
+        </Navbar.Collapse>
+      </Navbar>
+    );
+  }
+}
 
 export default NavigationBar;

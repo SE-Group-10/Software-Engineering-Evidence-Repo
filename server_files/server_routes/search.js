@@ -7,37 +7,37 @@ router.get("/", async (req, res) => {
   let searchQuery = {
     $or: [],
   };
-  switch (req.body.search_type) {
+  switch (req.query.search_type) {
     case "design":
       break;
 
     default:
-      if (req.body.title) {
+      if (req.query.title) {
         searchQuery.$or.push({
-          title: { $regex: `${req.body.title}`, $options: "i" },
+          title: { $regex: `${req.query.title}`, $options: "i" },
         });
       }
-      if (req.body.document_type) {
+      if (req.query.document_type) {
         searchQuery.$or.push({
           document_type: {
-            $regex: `${req.body.document_type}`,
+            $regex: `${req.query.document_type}`,
             options: "i",
           },
         });
       }
-      if (req.body.authors) {
+      if (req.query.authors) {
         searchQuery.$or.push({
-          authors: { $regex: `${req.body.authors}`, $options: "i" },
+          authors: { $regex: `${req.query.authors}`, $options: "i" },
         });
       }
-      if (req.body.publisher) {
+      if (req.query.publisher) {
         searchQuery.$or.push({
-          publisher: { $regex: `${req.body.publisher}`, $options: "i" },
+          publisher: { $regex: `${req.query.publisher}`, $options: "i" },
         });
       }
-      if (req.body.min_date && req.body.max_date) {
+      if (req.query.min_date && req.query.max_date) {
         searchQuery.$or.push({
-          publish_date: { $gte: req.body.min_date, $lte: req.body.max_date },
+          publish_date: { $gte: req.query.min_date, $lte: req.query.max_date },
         });
       }
       break;

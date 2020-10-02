@@ -23,7 +23,6 @@ router.post("/", async (req, res) => {
     affiliation: req.body.affiliation,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    datetime_updated: Date.now,
   });
 
   try {
