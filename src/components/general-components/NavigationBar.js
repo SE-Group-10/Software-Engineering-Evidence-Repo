@@ -2,41 +2,54 @@ import React from "react";
 import "./NavigationBar.css";
 import {
   Nav,
-  Navbar
+  Navbar,
+  Form,
+  FormControl,
+  Button
 } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
     <Navbar
       collapseOnSelect
-      bg="dark"
-      variant="dark"
       expand="lg"
       className="navBar"
     >
       <LinkContainer to="/home">
-        <Navbar.Brand>SEER App</Navbar.Brand>
+        <Navbar.Brand>
+          <img
+            alt="SEER Logo"
+            src={require("../../assets/logos/Logo_Style1.png")}
+            className="d-inline-block align-top"
+            id="navbar_logo"
+          />
+        </Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <LinkContainer to="/dashboard">
-            <Nav.Link>Dashboard</Nav.Link>
+          <LinkContainer to="/analyst-queue">
+            <Nav.Link className="nav-link">Dashboard</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/search">
-            <Nav.Link>Search</Nav.Link>
+            <Nav.Link> Advanced Search</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/login">
-            <Nav.Link>Login</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/sign-up">
-            <Nav.Link>Sign Up</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/analyst-queue">
-            <Nav.Link>Analyst Queue</Nav.Link>
-          </LinkContainer>
+            <Nav.Link id="q_search">Quick Search: </Nav.Link> 
+          <Form inline id="navbar-search">
+            <FormControl type="text" placeholder="Article, book or website" className="mr-sm-2" />
+            <Button variant="outline-success"> <Link to="search-result"><img src={require("../../assets/icons/search_icon.svg")} id="search_icon"/> </Link></Button>
+          </Form>
+
         </Nav>
+        <img src={require("../../assets/icons/placeholder_circle.png")} id="login_placeholder" />
+        <LinkContainer to="/sign-up">
+          <Button id="nav_button">Sign Up</Button>
+        </LinkContainer>
+        <LinkContainer to="/login">
+          <Button id="nav_button">Login</Button>
+        </LinkContainer>
       </Navbar.Collapse>
     </Navbar>
   );
