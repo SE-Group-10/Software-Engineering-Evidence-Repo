@@ -618,6 +618,16 @@ exports[`Sign Up Renders properly 1`] = `
   <div
     className="container"
   >
+    <h1
+      style={
+        Object {
+          "color": "#00994C",
+          "textAlign": "center",
+        }
+      }
+    >
+       Register with SEER
+    </h1>
     <form
       className=""
     >
@@ -633,7 +643,7 @@ exports[`Sign Up Renders properly 1`] = `
         <input
           className="form-control"
           id="formBasicFirstName"
-          placeholder="Enter First Name"
+          placeholder="John"
           type="text"
         />
       </div>
@@ -649,7 +659,7 @@ exports[`Sign Up Renders properly 1`] = `
         <input
           className="form-control"
           id="formBasicLastName"
-          placeholder="Enter Last Name"
+          placeholder="Doe"
           type="text"
         />
       </div>
@@ -681,7 +691,7 @@ exports[`Sign Up Renders properly 1`] = `
         <input
           className="form-control"
           id="formBasicEmail"
-          placeholder="Enter email"
+          placeholder="john.doe@gmail.com"
           type="email"
         />
       </div>
@@ -697,7 +707,7 @@ exports[`Sign Up Renders properly 1`] = `
         <input
           className="form-control"
           id="formBasicPassword"
-          placeholder="Password"
+          placeholder="Password must be 8 or more characters"
           type="password"
         />
       </div>
@@ -713,10 +723,15 @@ exports[`Sign Up Renders properly 1`] = `
         <input
           className="form-control"
           id="formBasicEmail"
-          placeholder="Affilitiation"
+          placeholder="Enter your company, school or university"
           type="text"
         />
       </div>
+      <label
+        className="form-label"
+      >
+        Select your account type:
+      </label>
       <div
         className="form-group"
       >
@@ -727,6 +742,7 @@ exports[`Sign Up Renders properly 1`] = `
             className="form-check-input"
             disabled={false}
             id="formBasicRadiobox"
+            name="account_type"
             type="radio"
           />
           <label
@@ -734,13 +750,9 @@ exports[`Sign Up Renders properly 1`] = `
             htmlFor="formBasicRadiobox"
             title=""
           >
-            Moderator
+            Standard User
           </label>
         </div>
-      </div>
-      <div
-        className="form-group"
-      >
         <div
           className="form-check"
         >
@@ -748,6 +760,7 @@ exports[`Sign Up Renders properly 1`] = `
             className="form-check-input"
             disabled={false}
             id="formBasicRadiobox"
+            name="account_type"
             type="radio"
           />
           <label
@@ -755,7 +768,43 @@ exports[`Sign Up Renders properly 1`] = `
             htmlFor="formBasicRadiobox"
             title=""
           >
-            Admin
+            Analyst (SERL Members only)
+          </label>
+        </div>
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="formBasicRadiobox"
+            name="account_type"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="formBasicRadiobox"
+            title=""
+          >
+            Moderator (requires authentication)
+          </label>
+        </div>
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="formBasicRadiobox"
+            name="account_type"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="formBasicRadiobox"
+            title=""
+          >
+            Administrator (requires authentication)
           </label>
         </div>
       </div>
