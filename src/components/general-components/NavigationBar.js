@@ -78,16 +78,10 @@ class NavigationBar extends React.Component {
             src={require("../../assets/icons/placeholder_circle.png")}
             id="login_placeholder"
           />
-          <LinkContainer to="/sign-up">
-            <Button id="nav_button">Sign Up</Button>
-          </LinkContainer>
-          <LinkContainer to="/login">
-            <Button id="nav_button">Login</Button>
-          </LinkContainer>
-        </Navbar.Collapse>
-      </Navbar>
-    );
+      </Navbar.Collapse>
+    </Navbar>
+  );
   }
-}
+};
 
 export default NavigationBar;

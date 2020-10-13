@@ -9,6 +9,7 @@ import SignUpPage from "./pages/SignUpPage";
 import SearchResultPage from "./pages/SearchResultPage";
 import { Container } from "react-bootstrap";
 import { Switch, Route, Redirect } from "react-router-dom";
+import AnalystQueuePage from "./pages/AnalystQueuePage";
 
 function App() {
   return (
@@ -28,8 +29,14 @@ function App() {
           <Route path="/login" component={LoginPage} />
           <Route path="/sign-up" component={SignUpPage} />
 
+
+          {/* Analyst Pages */}
+          <Route path="/analyst-queue" component={AnalystQueuePage} />
+          
+
           {/* Search Results Page */}
           <Route path="/search-result" component={SearchResultPage}/>
+
         </Switch>
       </Container>
     </div>
