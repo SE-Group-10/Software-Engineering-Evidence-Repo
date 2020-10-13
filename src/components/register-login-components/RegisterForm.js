@@ -1,12 +1,16 @@
 import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import bcrypt from "bcryptjs";
 import swal from "@sweetalert/with-react";
+import { Redirect } from "react-router-dom";
 import api from "../../api/api";
 
 class RegisterForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      redirect: false,
+      saltRounds: 10,
       first_name: "",
       last_name: "",
       user_name: "",
@@ -32,38 +36,88 @@ class RegisterForm extends React.Component {
     });
   };
 
+  componentDidMount() {
+    this.setState({ redirect: false });
+  }
+
   // Function to Submit Register Form
-  onSubmit = async (event) => {
+  onSubmit = (event) => {
     event.preventDefault();
-    if (this.state.password === this.state.confirm_password) {
-      let userObject = {
-        first_name: this.state.first_name,
-        last_name: this.state.last_name,
-        user_name: this.state.user_name,
-        email: this.state.email,
-        password: this.state.password,
-        affiliation: this.state.affiliation,
-        user_type: this.state.user_type,
-      };
-      try {
-        await api.post("/users", userObject);
-        // Successful Sign In!
-        swal({
-          title: "Registration Successful!",
-          text: "Redirecting you to login page...",
-          icon: "success",
-          timer: 3000,
-          buttons: [false, true],
-          closeOnClickOutside: false,
-          closeOnEsc: false,
-        }).then(() => {
-          window.location = "/login";
-        });
-      } catch (e) {
-        // Error with Signing up
+    if (this.state.password.length > 8) {
+      if (this.state.password === this.state.confirm_password) {
+        bcrypt.genSalt(
+          this.state.saltRounds,
+          // Store hash in your password DB.
+          (err, salt) => {
+            if (err) {
+              // Error with Signing up
+              swal({
+                title: "Registration Unsuccessful!",
+                text:
+                  "Something went wrong with creating the hash for your password!",
+                icon: "error",
+                buttons: [false, true],
+              });
+            } else {
+              console.log("wat");
+              bcrypt.hash(this.state.password, salt, async (err, hash) => {
+                if (err) {
+                  // Error with Signing up
+                  swal({
+                    title: "Registration Unsuccessful!",
+                    text: "Something went wrong with hashing your password!",
+                    icon: "error",
+                    buttons: [false, true],
+                  });
+                } else {
+                  let userObject = {
+                    first_name: this.state.first_name,
+                    last_name: this.state.last_name,
+                    user_name: this.state.user_name,
+                    email: this.state.email,
+                    password: hash,
+                    affiliation: this.state.affiliation,
+                    user_type: this.state.user_type,
+                  };
+                  try {
+                    const registerResponse = await api.post(
+                      "/users",
+                      userObject
+                    );
+                    console.log(registerResponse);
+                    // Successful Sign In!
+                    swal({
+                      title: "Registration Successful!",
+                      text: "Redirecting you to login page...",
+                      icon: "success",
+                      timer: 3000,
+                      buttons: [false, true],
+                      closeOnClickOutside: false,
+                      closeOnEsc: false,
+                    }).then(() => {
+                      this.setState({
+                        redirect: false,
+                      });
+                    });
+                  } catch (error) {
+                    // Error with Signing up
+                    swal({
+                      title: "Registration Unsuccessful!",
+                      text: error?.response?.data || "Unknown Error",
+                      icon: "error",
+                      buttons: [false, true],
+                    });
+                  }
+                }
+              });
+            }
+          }
+        );
+      } else {
+        // Error with Signing up (Password is not the same)
         swal({
           title: "Registration Unsuccessful!",
-          text: "Something went wrong with registrating your account!",
+          text: "Passwords are not the same!",
           icon: "error",
           buttons: [false, true],
         });
@@ -72,7 +126,7 @@ class RegisterForm extends React.Component {
       // Error with Signing up (Password is not the same)
       swal({
         title: "Registration Unsuccessful!",
-        text: "Passwords are not the same!",
+        text: "Your password must be 8 or more characters!",
         icon: "error",
         buttons: [false, true],
       });
@@ -80,6 +134,9 @@ class RegisterForm extends React.Component {
   };
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/login" />;
+    }
     return (
       <Container>
         <h1 style={{ textAlign: "center", color: "#00994C" }}>

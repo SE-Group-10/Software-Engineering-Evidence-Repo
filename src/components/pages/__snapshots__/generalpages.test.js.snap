@@ -97,19 +97,21 @@ exports[`Login Page Renders properly 1`] = `
   >
     <form
       className=""
+      onSubmit={[Function]}
     >
       <div
         className="form-group"
       >
         <label
           className="form-label"
-          htmlFor="formBasicEmail"
+          htmlFor="email"
         >
           Email address
         </label>
         <input
           className="form-control"
-          id="formBasicEmail"
+          id="email"
+          onChange={[Function]}
           placeholder="Enter email"
           type="email"
         />
@@ -119,13 +121,14 @@ exports[`Login Page Renders properly 1`] = `
       >
         <label
           className="form-label"
-          htmlFor="formBasicPassword"
+          htmlFor="password"
         >
           Password
         </label>
         <input
           className="form-control"
-          id="formBasicPassword"
+          id="password"
+          onChange={[Function]}
           placeholder="Password"
           type="password"
         />
@@ -140,6 +143,7 @@ exports[`Login Page Renders properly 1`] = `
             className="form-check-input"
             disabled={false}
             id="formBasicCheckbox"
+            onChange={[Function]}
             type="checkbox"
           />
           <label
@@ -626,25 +630,30 @@ exports[`Sign Up Renders properly 1`] = `
         }
       }
     >
-       Register with SEER
+       
+      Register with SEER
     </h1>
     <form
       className=""
+      onSubmit={[Function]}
     >
       <div
         className="form-group"
       >
         <label
           className="form-label"
-          htmlFor="formBasicFirstName"
+          htmlFor="first_name"
         >
           First Name
         </label>
         <input
           className="form-control"
-          id="formBasicFirstName"
+          id="first_name"
+          onChange={[Function]}
           placeholder="John"
+          required={true}
           type="text"
+          value=""
         />
       </div>
       <div
@@ -652,15 +661,18 @@ exports[`Sign Up Renders properly 1`] = `
       >
         <label
           className="form-label"
-          htmlFor="formBasicLastName"
+          htmlFor="last_name"
         >
           Last Name
         </label>
         <input
           className="form-control"
-          id="formBasicLastName"
+          id="last_name"
+          onChange={[Function]}
           placeholder="Doe"
+          required={true}
           type="text"
+          value=""
         />
       </div>
       <div
@@ -668,15 +680,18 @@ exports[`Sign Up Renders properly 1`] = `
       >
         <label
           className="form-label"
-          htmlFor="formUsername"
+          htmlFor="user_name"
         >
           Username
         </label>
         <input
           className="form-control"
-          id="formUsername"
+          id="user_name"
+          onChange={[Function]}
           placeholder="Enter Username"
+          required={true}
           type="text"
+          value=""
         />
       </div>
       <div
@@ -684,15 +699,18 @@ exports[`Sign Up Renders properly 1`] = `
       >
         <label
           className="form-label"
-          htmlFor="formBasicEmail"
+          htmlFor="email"
         >
           Email address
         </label>
         <input
           className="form-control"
-          id="formBasicEmail"
+          id="email"
+          onChange={[Function]}
           placeholder="john.doe@gmail.com"
+          required={true}
           type="email"
+          value=""
         />
       </div>
       <div
@@ -700,15 +718,18 @@ exports[`Sign Up Renders properly 1`] = `
       >
         <label
           className="form-label"
-          htmlFor="formBasicPassword"
+          htmlFor="password"
         >
           Password
         </label>
         <input
           className="form-control"
-          id="formBasicPassword"
+          id="password"
+          onChange={[Function]}
           placeholder="Password must be 8 or more characters"
+          required={true}
           type="password"
+          value=""
         />
       </div>
       <div
@@ -716,38 +737,64 @@ exports[`Sign Up Renders properly 1`] = `
       >
         <label
           className="form-label"
-          htmlFor="formBasicEmail"
+          htmlFor="confirm_password"
+        >
+          Confirm Password
+        </label>
+        <input
+          className="form-control"
+          id="confirm_password"
+          onChange={[Function]}
+          placeholder="Password must be 8 or more characters"
+          required={true}
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="affiliation"
         >
           Affilitiation
         </label>
         <input
           className="form-control"
-          id="formBasicEmail"
+          id="affiliation"
+          onChange={[Function]}
           placeholder="Enter your company, school or university"
+          required={true}
           type="text"
+          value=""
         />
       </div>
-      <label
-        className="form-label"
-      >
-        Select your account type:
-      </label>
       <div
         className="form-group"
       >
+        <label
+          className="form-label"
+          htmlFor="chooseAccountType"
+        >
+          Select your account type:
+        </label>
         <div
           className="form-check"
         >
           <input
             className="form-check-input"
             disabled={false}
-            id="formBasicRadiobox"
+            id="user_radio"
             name="account_type"
+            onChange={[Function]}
+            required={true}
             type="radio"
+            value="user"
           />
           <label
             className="form-check-label"
-            htmlFor="formBasicRadiobox"
+            htmlFor="user_radio"
             title=""
           >
             Standard User
@@ -759,13 +806,16 @@ exports[`Sign Up Renders properly 1`] = `
           <input
             className="form-check-input"
             disabled={false}
-            id="formBasicRadiobox"
+            id="analyst_radio"
             name="account_type"
+            onChange={[Function]}
+            required={true}
             type="radio"
+            value="analyst"
           />
           <label
             className="form-check-label"
-            htmlFor="formBasicRadiobox"
+            htmlFor="analyst_radio"
             title=""
           >
             Analyst (SERL Members only)
@@ -777,13 +827,16 @@ exports[`Sign Up Renders properly 1`] = `
           <input
             className="form-check-input"
             disabled={false}
-            id="formBasicRadiobox"
+            id="moderator_radio"
             name="account_type"
+            onChange={[Function]}
+            required={true}
             type="radio"
+            value="moderator"
           />
           <label
             className="form-check-label"
-            htmlFor="formBasicRadiobox"
+            htmlFor="moderator_radio"
             title=""
           >
             Moderator (requires authentication)
@@ -795,13 +848,16 @@ exports[`Sign Up Renders properly 1`] = `
           <input
             className="form-check-input"
             disabled={false}
-            id="formBasicRadiobox"
+            id="administrator_radio"
             name="account_type"
+            onChange={[Function]}
+            required={true}
             type="radio"
+            value="administrator"
           />
           <label
             className="form-check-label"
-            htmlFor="formBasicRadiobox"
+            htmlFor="administrator_radio"
             title=""
           >
             Administrator (requires authentication)
