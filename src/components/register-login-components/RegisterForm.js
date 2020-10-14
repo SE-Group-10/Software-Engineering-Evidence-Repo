@@ -138,7 +138,7 @@ class RegisterForm extends React.Component {
       return <Redirect to="/login" />;
     }
     return (
-      <Container>
+      <Container className="mt-5">
         <h1 style={{ textAlign: "center", color: "#00994C" }}>
           {" "}
           Register with SEER

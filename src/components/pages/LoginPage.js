@@ -4,9 +4,9 @@ import LoginForm from "../register-login-components/LoginForm";
 
 const LoginPage = () => {
   return (
-    <Container>
+    <div>
       <LoginForm />
-    </Container>
+    </div>
   );
 };
 

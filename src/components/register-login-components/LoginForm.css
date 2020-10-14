@@ -1,0 +1,10 @@
+.loginStyle {
+  margin: 10%;
+  border: 4px solid #00994c;
+}
+.loginStyle h1 {
+  color: #00994c;
+}
+.loginStyle form {
+  padding: 100px;
+}

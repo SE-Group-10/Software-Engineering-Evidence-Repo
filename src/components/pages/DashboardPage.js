@@ -1,12 +1,19 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import AdminPage from "./AdminPage";
+import { connect } from "react-redux";
 
 const DashboardPage = () => {
-  return (
-    <Container>
-      <h2>DashboardPage</h2>
-    </Container>
-  );
+  let display = "";
+  if (this.props.user_information.user_type === "admin") {
+    return <AdminPage />;
+  }
 };
 
-export default DashboardPage;
+const mapStateToProps = (state) => ({
+  isLoggedIn: state.seerUserReducer.isLoggedIn,
+  user_information: state.seerUserReducer.user_information,
+});
+
+const mapDispatchToProps = () => {};
+
+export default connect(mapStateToProps, mapDispatchToProps())(DashboardPage);

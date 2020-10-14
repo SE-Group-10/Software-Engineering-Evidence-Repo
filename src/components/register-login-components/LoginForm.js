@@ -1,6 +1,7 @@
+import "./LoginForm.css";
 import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import bcrypt from "bcryptjs";
 import swal from "@sweetalert/with-react";
 import { connect } from "react-redux";
@@ -94,8 +95,9 @@ class LoginForm extends React.Component {
     }
 
     return (
-      <Container>
+      <Container className="loginStyle">
         <Form onSubmit={this.onSubmit}>
+          <h1>Seer Login</h1>
           <Form.Group controlId="email">
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -119,9 +121,14 @@ class LoginForm extends React.Component {
               onChange={this.formOnChangeHandler}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button className="seer-button-styling mr-2" type="submit">
             Login
           </Button>
+          <Link to="/home">
+            <Button variant="secondary" type="submit">
+              Go Home
+            </Button>
+          </Link>
         </Form>
       </Container>
     );
