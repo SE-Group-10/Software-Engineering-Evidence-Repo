@@ -4,6 +4,7 @@ import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { signout } from "../../actions";
 
 class NavigationBar extends React.Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class NavigationBar extends React.Component {
               </LinkContainer>
             )}
             <LinkContainer to="/search">
-              <Nav.Link> Advanced Search</Nav.Link>
+              <Nav.Link>Advanced Search</Nav.Link>
             </LinkContainer>
             <Form inline id="navbar-search" onSubmit={this.onSubmit}>
               <Form.Group controlId="title">
@@ -82,15 +83,25 @@ class NavigationBar extends React.Component {
             src={require("../../assets/icons/placeholder_circle.png")}
             id="login_placeholder"
           />
-          {!this.props.isLoggedIn && (
+          {!this.props.isLoggedIn ? (
             <React.Fragment>
               <LinkContainer to="/login">
-                <Button id="nav_button">Login</Button>
+                <Button className="nav_button">Login</Button>
               </LinkContainer>
               <LinkContainer to="/sign-up">
-                <Button id="nav_button">Sign Up</Button>
+                <Button className="nav_button">Sign Up</Button>
               </LinkContainer>
             </React.Fragment>
+          ) : (
+            <LinkContainer
+              to="/home"
+              className="nav_button"
+              onClick={() => {
+                this.props.signout();
+              }}
+            >
+              <Button className="nav_button">Logout</Button>
+            </LinkContainer>
           )}
         </Navbar.Collapse>
       </Navbar>
@@ -102,6 +113,10 @@ const mapStateToProps = (state) => ({
   isLoggedIn: state.seerUserReducer.isLoggedIn,
 });
 
-const mapDispatchToProps = () => {};
+const mapDispatchToProps = () => {
+  return {
+    signout,
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps())(NavigationBar);

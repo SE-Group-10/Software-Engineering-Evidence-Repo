@@ -96,7 +96,7 @@ class RegisterForm extends React.Component {
                       closeOnEsc: false,
                     }).then(() => {
                       this.setState({
-                        redirect: false,
+                        redirect: true,
                       });
                     });
                   } catch (error) {

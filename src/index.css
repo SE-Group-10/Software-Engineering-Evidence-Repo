@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.seer-header-styling {
+  color: #00994c !important;
+}
+
 .seer-button-styling {
   background-color: #00994c !important;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);

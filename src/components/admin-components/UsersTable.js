@@ -71,7 +71,7 @@ class UsersTable extends React.Component {
     let usersArray = [];
     if (this.state.users) {
       usersArray = this.state.users.map((users, index) => {
-        if (users.user_type !== "admin") {
+        if (users.user_type !== "administrator") {
           return (
             <tr key={index}>
               <td>{index + 1}</td>

@@ -5,7 +5,7 @@ const Article = require("../server_models/Article");
 // SEARCH FOR ARTICLE BASED ON SEARCH TYPE
 router.get("/", async (req, res) => {
   let searchQuery = {
-    $or: [],
+    $or: [],  
   };
   switch (req.query.search_type) {
     case "design":

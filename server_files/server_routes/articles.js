@@ -23,6 +23,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET SPECIFIC ARTICLE
+router.get("/:article_id", async (req, res) => {
+  try {
+    const article = await Article.findById(req.params.article_id);
+    res.json(article);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 // SUBMIT AN ARTICLE
 router.post("/", async (req, res) => {
   const article = new Article({
@@ -57,25 +67,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// GET ALL ARTICLES IN A SPECIFIC STAGE
-router.get("/stages/:stage", async (req, res) => {
-  try {
-    const articleByStage = await Article.find({ stage: res.params.stage });
-    res.json(articleByStage);
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
-
-// GET SPECIFIC ARTICLE
-router.get("/:article_id", async (req, res) => {
-  try {
-    const article = await Article.findById(req.params.article_id);
-    res.json(article);
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
 
 // DELETE A SPECIFIC ARTICLE
 router.delete("/:article_id", async (req, res) => {

@@ -25,9 +25,11 @@ const store = createStore(
 test("Home Page Renders properly", () => {
   const tree = renderer
     .create(
-      <Router>
-        <HomePage />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <HomePage />
+        </Router>
+      </Provider>
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
@@ -49,9 +51,11 @@ test("Login Page Renders properly", () => {
 test("Search Page Renders properly", () => {
   const tree = renderer
     .create(
-      <Router>
-        <SearchPage />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <SearchPage />
+        </Router>
+      </Provider>
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
@@ -60,9 +64,11 @@ test("Search Page Renders properly", () => {
 test("Search Result Page Renders properly", () => {
   const tree = renderer
     .create(
-      <Router>
-        <SearchResultPage />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <SearchResultPage />
+        </Router>
+      </Provider>
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

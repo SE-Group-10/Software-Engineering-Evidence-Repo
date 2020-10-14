@@ -62,5 +62,14 @@
     "publisher": "IEEE",
     "publish_year": 2017,
     "publish_month": 10
+  },
+  {
+    "user_id": "TESTUSERSUBMITTER9",
+    "title": "Test Article",
+    "document_type": ["article"],
+    "authors": ["Fake", "Article", "Maria", "Article"],
+    "journals": ["arXiv.org"],
+    "publish_year": 2017,
+    "publish_month": 10
   }
 ]

@@ -1,104 +1,232 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home Page Renders properly 1`] = `
-<div
-  className="container"
-  style={
-    Object {
-      "color": "#00994C",
-      "paddingTop": "10vh",
-      "textAlign": "center",
-      "width": "100vw",
-    }
-  }
->
+<div>
+  <nav
+    className="navBar navbar navbar-expand-lg navbar-light"
+  >
+    <a
+      className="navbar-brand"
+      href="/home"
+      onClick={[Function]}
+    >
+      <img
+        alt="SEER Logo"
+        className="d-inline-block align-top"
+        id="navbar_logo"
+        src="Logo_Style1.png"
+      />
+    </a>
+    <button
+      aria-controls="basic-navbar-nav"
+      aria-label="Toggle navigation"
+      className="navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      aria-expanded={null}
+      className="navbar-collapse collapse"
+      id="basic-navbar-nav"
+    >
+      <div
+        className="mr-auto navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="/search"
+          href="/search"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+           Advanced Search
+        </a>
+      </div>
+      <img
+        id="login_placeholder"
+        src="placeholder_circle.png"
+      />
+      <a
+        className="nav_button btn btn-primary"
+        href="/login"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Login
+      </a>
+      <a
+        className="nav_button btn btn-primary"
+        href="/sign-up"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Sign Up
+      </a>
+    </div>
+  </nav>
   <div
     className="homepageHeader"
   >
-    <h1>
-       Welcome to SEER! 
-    </h1>
-    <br />
-    <h2>
-       A repository for Software Engineers to search for articles, 
+    <div>
+      <h1
+        style={
+          Object {
+            "fontWeight": "400",
+          }
+        }
+      >
+         Welcome to SEER! 
+      </h1>
       <br />
-      journals or research papers for evidences to support their ideas.
-    </h2>
-  </div>
-  <div
-    className="homepageCTA"
-    style={
-      Object {
-        "marginTop": "10vh",
-      }
-    }
-  >
-    <h2>
-       What are you looking for? 
-    </h2>
-    <form
-      className="form-inline"
-      id="navbar-search"
+      <h3
+        style={
+          Object {
+            "fontWeight": "200",
+          }
+        }
+      >
+         
+        A repository for Software Engineers to search for articles, 
+        <br />
+        journals or research papers for evidences to support their ideas.
+      </h3>
+    </div>
+    <div
+      className="homepageCTA"
       style={
         Object {
-          "display": "block",
-          "marginLeft": "auto",
-          "marginRight": "auto",
+          "marginTop": "10vh",
+          "paddingBottom": "5vh",
         }
       }
     >
-      <input
-        className="mr-sm-2 form-control"
-        placeholder="Search for articles, books or researches"
+      <h2
         style={
           Object {
-            "width": "30vw",
+            "fontWeight": "200",
+            "marginBottom": "2vh",
           }
         }
-        type="text"
-      />
-      <button
-        className="btn btn-outline-success"
-        disabled={false}
-        type="button"
       >
          
-        <a
-          href="/search-result"
-          onClick={[Function]}
-        >
-          <img
-            id="search_icon"
-            src={
-              Object {
-                "ReactComponent": Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "render": [Function],
-                },
-                "__esModule": true,
-                "default": "search_icon.svg",
-              }
+        What are you looking for?
+         
+      </h2>
+      <form
+        className="form-inline"
+        id="navbar-search"
+        style={
+          Object {
+            "display": "block",
+            "marginLeft": "auto",
+            "marginRight": "auto",
+          }
+        }
+      >
+        <input
+          className="mr-sm-2 form-control"
+          placeholder="Search for articles, books or researches"
+          style={
+            Object {
+              "width": "30vw",
             }
-          />
+          }
+          type="text"
+        />
+        <button
+          className="btn btn-outline-success"
+          disabled={false}
+          style={
+            Object {
+              "backgroundColor": "white",
+            }
+          }
+          type="button"
+        >
            
-        </a>
-      </button>
-    </form>
+          <a
+            href="/search-result"
+            onClick={[Function]}
+          >
+            <img
+              id="search_icon"
+              src={
+                Object {
+                  "ReactComponent": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "render": [Function],
+                  },
+                  "__esModule": true,
+                  "default": "search_icon.svg",
+                }
+              }
+            />
+             
+          </a>
+        </button>
+      </form>
+    </div>
+    <div
+      className="homepageFooter"
+      style={
+        Object {
+          "paddingTop": "15vh",
+          "textAlign": "center",
+          "width": "auto",
+        }
+      }
+    >
+      <h3
+        style={
+          Object {
+            "fontWeight": "400",
+          }
+        }
+      >
+         Brought to you by 
+      </h3>
+      <img
+        alt="AUT Logo"
+        src="AUT_Logo.png"
+        style={
+          Object {
+            "height": "80px",
+            "width": "auto",
+          }
+        }
+      />
+      <img
+        alt="SERL Logo"
+        src="SERL_Logo.png"
+        style={
+          Object {
+            "height": "80px",
+            "width": "auto",
+          }
+        }
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Login Page Renders properly 1`] = `
-<div
-  className="container"
->
+<div>
   <div
-    className="container"
+    className="loginStyle container"
   >
     <form
       className=""
       onSubmit={[Function]}
     >
+      <h1>
+        Seer Login
+      </h1>
       <div
         className="form-group"
       >
@@ -156,241 +284,682 @@ exports[`Login Page Renders properly 1`] = `
         </div>
       </div>
       <button
-        className="btn btn-primary"
+        className="seer-button-styling mr-2 btn btn-primary"
         disabled={false}
         type="submit"
       >
         Login
       </button>
+      <a
+        href="/home"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-secondary"
+          disabled={false}
+          type="submit"
+        >
+          Go Home
+        </button>
+      </a>
     </form>
   </div>
 </div>
 `;
 
 exports[`Search Page Renders properly 1`] = `
-<div
-  className="container"
->
-  <div
-    className="searchFieldContainer container-fluid"
+<div>
+  <nav
+    className="navBar navbar navbar-expand-lg navbar-light"
   >
-    <div
-      className="container"
+    <a
+      className="navbar-brand"
+      href="/home"
+      onClick={[Function]}
     >
-      <form
-        className=""
+      <img
+        alt="SEER Logo"
+        className="d-inline-block align-top"
+        id="navbar_logo"
+        src="Logo_Style1.png"
+      />
+    </a>
+    <button
+      aria-controls="basic-navbar-nav"
+      aria-label="Toggle navigation"
+      className="navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      aria-expanded={null}
+      className="navbar-collapse collapse"
+      id="basic-navbar-nav"
+    >
+      <div
+        className="mr-auto navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="/search"
+          href="/search"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+           Advanced Search
+        </a>
+      </div>
+      <img
+        id="login_placeholder"
+        src="placeholder_circle.png"
+      />
+      <a
+        className="nav_button btn btn-primary"
+        href="/login"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Login
+      </a>
+      <a
+        className="nav_button btn btn-primary"
+        href="/sign-up"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Sign Up
+      </a>
+    </div>
+  </nav>
+  <div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-2"
       >
         <div
-          className="form-group"
-        >
-          <label
-            className="form-label"
-            htmlFor="descriptionSearch"
-          >
-            <h4>
-              Description
-            </h4>
-          </label>
-          <input
-            className="form-control"
-            id="descriptionSearch"
-            type="text"
-          />
-        </div>
-        <div
-          className="form-group"
+          className="pro-sidebar"
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           <div
-            className="row"
+            className="pro-sidebar-inner"
           >
             <div
-              className="col-sm-2"
+              className="pro-sidebar-layout"
+            >
+              <div
+                className="pro-sidebar-header"
+              >
+                <nav
+                  className="pro-menu"
+                >
+                  <ul>
+                    <li
+                      className="pro-menu-item pro-sub-menu"
+                    >
+                      <div
+                        className="pro-inner-item"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <span
+                          className="pro-item-content"
+                        >
+                          Search Filters:
+                        </span>
+                        <span
+                          className="pro-arrow-wrapper"
+                        >
+                          <span
+                            className="pro-arrow"
+                          />
+                        </span>
+                      </div>
+                      <div
+                        className="react-slidedown pro-inner-list-item"
+                        onTransitionEnd={[Function]}
+                      >
+                        <div>
+                          <ul>
+                            <form
+                              className=""
+                              onSubmit={[Function]}
+                            >
+                              <div
+                                className="row"
+                              >
+                                <div
+                                  className="form-group"
+                                >
+                                  <label
+                                    className="form-label"
+                                    htmlFor="researchMethod"
+                                  >
+                                    Research Method
+                                  </label>
+                                  <select
+                                    className="form-control"
+                                    defaultValue=""
+                                    id="researchMethod"
+                                    onChange={[Function]}
+                                    style={
+                                      Object {
+                                        "width": "12vw",
+                                      }
+                                    }
+                                    type="text"
+                                  >
+                                    <option
+                                      disabled={true}
+                                      value=""
+                                    >
+                                      Select Research Method
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div
+                                className="row"
+                              >
+                                <div
+                                  className="form-group"
+                                  style={
+                                    Object {
+                                      "width": "12vw",
+                                    }
+                                  }
+                                >
+                                  <label
+                                    className="form-label"
+                                    htmlFor="participants_form"
+                                  >
+                                    Research Participants
+                                  </label>
+                                </div>
+                              </div>
+                              <div
+                                className="row"
+                              >
+                                <div
+                                  className="form-group"
+                                >
+                                  <label
+                                    className="form-label"
+                                    htmlFor="evidenceItem"
+                                  >
+                                    Evidence Item
+                                  </label>
+                                  <select
+                                    className="form-control"
+                                    defaultValue=""
+                                    id="evidenceItem"
+                                    onChange={[Function]}
+                                    style={
+                                      Object {
+                                        "width": "12vw",
+                                      }
+                                    }
+                                    type="text"
+                                  >
+                                    <option
+                                      disabled={true}
+                                      value=""
+                                    >
+                                      Select Evidence Item
+                                    </option>
+                                    <option
+                                      value="article_title"
+                                    >
+                                      Outcome/Benefit
+                                    </option>
+                                    <option
+                                      value="article_name"
+                                    >
+                                      Context
+                                    </option>
+                                    <option
+                                      value="article_author"
+                                    >
+                                      Result
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div
+                                className="row"
+                              >
+                                <div
+                                  className="form-group"
+                                >
+                                  <label
+                                    className="form-label"
+                                    htmlFor="method"
+                                  >
+                                    SE Method
+                                  </label>
+                                  <select
+                                    className="form-control"
+                                    defaultValue=""
+                                    id="method"
+                                    onChange={[Function]}
+                                    style={
+                                      Object {
+                                        "width": "12vw",
+                                      }
+                                    }
+                                    type="text"
+                                  >
+                                    <option
+                                      disabled={true}
+                                      value=""
+                                    >
+                                      Select SE Method
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div
+                                className="row"
+                              >
+                                <div
+                                  className="form-group"
+                                >
+                                  <label
+                                    className="form-label"
+                                    htmlFor="methodology"
+                                  >
+                                    SE Methodology
+                                  </label>
+                                  <select
+                                    className="form-control"
+                                    defaultValue=""
+                                    id="methodology"
+                                    onChange={[Function]}
+                                    style={
+                                      Object {
+                                        "width": "12vw",
+                                      }
+                                    }
+                                    type="text"
+                                  >
+                                    <option
+                                      disabled={true}
+                                      value=""
+                                    >
+                                      Select SE Methodology
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div
+                                className="row"
+                              >
+                                <label
+                                  className="form-label"
+                                >
+                                  Publication Details: 
+                                </label>
+                                <div
+                                  className="form-group"
+                                >
+                                  <input
+                                    className="form-control"
+                                    id="authorSearch"
+                                    placeholder="Author"
+                                    type="text"
+                                  />
+                                </div>
+                                <div
+                                  className="form-group"
+                                >
+                                  <input
+                                    className="form-control"
+                                    id="titleSearch"
+                                    placeholder="Title"
+                                    type="text"
+                                  />
+                                </div>
+                                <div
+                                  className="form-group"
+                                >
+                                  <input
+                                    className="form-control"
+                                    id="linkSearch"
+                                    placeholder="URL or DOI"
+                                    type="text"
+                                  />
+                                </div>
+                              </div>
+                            </form>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div
+                className="pro-sidebar-content"
+              >
+                <nav
+                  className="pro-menu"
+                >
+                  <ul>
+                    <li
+                      className="pro-menu-item pro-sub-menu"
+                    >
+                      <div
+                        className="pro-inner-item"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <span
+                          className="pro-item-content"
+                        >
+                          Sort Results By:
+                        </span>
+                        <span
+                          className="pro-arrow-wrapper"
+                        >
+                          <span
+                            className="pro-arrow"
+                          />
+                        </span>
+                      </div>
+                      <div
+                        className="react-slidedown pro-inner-list-item"
+                        onTransitionEnd={[Function]}
+                      >
+                        <div>
+                          <ul>
+                            <li
+                              className="pro-menu-item"
+                            >
+                              <div
+                                className="pro-inner-item"
+                                role="button"
+                                tabIndex={0}
+                              >
+                                <span
+                                  className="pro-item-content"
+                                >
+                                  User Ratings
+                                </span>
+                              </div>
+                            </li>
+                             
+                            <li
+                              className="pro-menu-item"
+                            >
+                              <div
+                                className="pro-inner-item"
+                                role="button"
+                                tabIndex={0}
+                              >
+                                <span
+                                  className="pro-item-content"
+                                >
+                                  Reviews Quantity
+                                </span>
+                              </div>
+                            </li>
+                             
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-label="overlay"
+            className="overlay"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </div>
+      </div>
+      <div
+        className="col-lg-8"
+      >
+        <div
+          className="searchFieldContainer"
+        >
+          <form
+            className=""
+          >
+            <div
+              className="form-group"
             >
               <label
                 className="form-label"
-                htmlFor="dateRangeSearch"
+                htmlFor="descriptionSearch"
               >
                 <h4>
-                  Date Range:
+                  Search:
                 </h4>
               </label>
-            </div>
-            <div
-              className="col"
-            >
               <input
                 className="form-control"
-                id="dateRangeSearch"
-                type="date"
+                id="descriptionSearch"
+                placeholder="Enter a keyword or phrase to search for evidences"
+                type="text"
               />
             </div>
             <div
-              className="col-sm-1"
+              className="form-group"
             >
-              <h4>
-                To
-              </h4>
+              <div
+                className="row"
+              >
+                <div
+                  className="col-sm-2"
+                >
+                  <label
+                    className="form-label"
+                    htmlFor="dateRangeSearch"
+                  >
+                    <h4>
+                      Document Date:
+                    </h4>
+                  </label>
+                </div>
+                <div
+                  className="col"
+                >
+                  <input
+                    className="form-control"
+                    id="dateRangeSearch"
+                    type="date"
+                  />
+                </div>
+                <div
+                  className="col-sm-1"
+                >
+                  <h4>
+                    to
+                  </h4>
+                </div>
+                <div
+                  className="col"
+                >
+                  <input
+                    className="form-control"
+                    id="dateRangeSearch"
+                    type="date"
+                  />
+                </div>
+              </div>
             </div>
             <div
-              className="col"
+              className="row"
             >
-              <input
-                className="form-control"
-                id="dateRangeSearch"
-                type="date"
-              />
+              <div
+                className="col-sm-1"
+              >
+                <h4>
+                  If
+                </h4>
+              </div>
+              <div
+                className="col"
+              >
+                <select
+                  className="form-control"
+                >
+                  <option
+                    value="0"
+                  >
+                    Name of Field
+                  </option>
+                  <option
+                    value="article_title"
+                  >
+                    Article Title
+                  </option>
+                  <option
+                    value="article_name"
+                  >
+                    Article Name
+                  </option>
+                  <option
+                    value="article_author"
+                  >
+                    Author
+                  </option>
+                </select>
+              </div>
+              <div
+                className="col-sm-2"
+              >
+                <select
+                  className="form-control"
+                >
+                  <option
+                    value="0"
+                  >
+                    Operator
+                  </option>
+                  <option
+                    value="contains"
+                  >
+                    Contains
+                  </option>
+                  <option
+                    value="not_contains"
+                  >
+                    Does Not Contain
+                  </option>
+                  <option
+                    value="begins_with"
+                  >
+                    Begins With
+                  </option>
+                  <option
+                    value="equals"
+                  >
+                    Is Equal To
+                  </option>
+                  <option
+                    value="less_than"
+                  >
+                    Is Less Than
+                  </option>
+                  <option
+                    value="less_than_equals"
+                  >
+                    Is Less Than Or Equal To
+                  </option>
+                  <option
+                    value="more_than"
+                  >
+                    Is More Than
+                  </option>
+                  <option
+                    value="more_than_equals"
+                  >
+                    Is More Than Or Equal To
+                  </option>
+                </select>
+              </div>
+              <div
+                className="col"
+              >
+                <select
+                  className="form-control"
+                >
+                  <option>
+                    Value
+                  </option>
+                </select>
+              </div>
+              <div
+                className="col-sm-1"
+              >
+                <a>
+                  <img
+                    alt="add-search"
+                    src={
+                      Object {
+                        "ReactComponent": Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "render": [Function],
+                        },
+                        "__esModule": true,
+                        "default": "plus_icon.svg",
+                      }
+                    }
+                  />
+                </a>
+              </div>
+              <div
+                className="col-sm-1"
+              >
+                <a>
+                  <img
+                    alt="add-search"
+                    src={
+                      Object {
+                        "ReactComponent": Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "render": [Function],
+                        },
+                        "__esModule": true,
+                        "default": "dash_icon.svg",
+                      }
+                    }
+                  />
+                </a>
+              </div>
             </div>
-          </div>
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
         </div>
-        <div
-          className="row"
-        >
-          <div
-            className="col-sm-1"
-          >
-            <h4>
-              If
-            </h4>
-          </div>
-          <div
-            className="col"
-          >
-            <select
-              className="form-control"
-            >
-              <option
-                value="0"
-              >
-                Name of Field
-              </option>
-              <option
-                value="article_title"
-              >
-                Article Title
-              </option>
-              <option
-                value="article_name"
-              >
-                Article Name
-              </option>
-              <option
-                value="article_author"
-              >
-                Author
-              </option>
-            </select>
-          </div>
-          <div
-            className="col-sm-2"
-          >
-            <select
-              className="form-control"
-            >
-              <option
-                value="0"
-              >
-                Operator
-              </option>
-              <option
-                value="contains"
-              >
-                Contains
-              </option>
-              <option
-                value="not_contains"
-              >
-                Does Not Contain
-              </option>
-              <option
-                value="begins_with"
-              >
-                Begins With
-              </option>
-              <option
-                value="equals"
-              >
-                Is Equal To
-              </option>
-              <option
-                value="less_than"
-              >
-                Is Less Than
-              </option>
-              <option
-                value="less_than_equals"
-              >
-                Is Less Than Or Equal To
-              </option>
-              <option
-                value="more_than"
-              >
-                Is More Than
-              </option>
-              <option
-                value="more_than_equals"
-              >
-                Is More Than Or Equal To
-              </option>
-            </select>
-          </div>
-          <div
-            className="col"
-          >
-            <select
-              className="form-control"
-            >
-              <option>
-                Value
-              </option>
-            </select>
-          </div>
-          <div
-            className="col-sm-1"
-          >
-            <a>
-              <img
-                alt="add-search"
-                src={
-                  Object {
-                    "ReactComponent": Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "render": [Function],
-                    },
-                    "__esModule": true,
-                    "default": "plus_icon.svg",
-                  }
-                }
-              />
-            </a>
-          </div>
-          <div
-            className="col-sm-1"
-          >
-            <a>
-              <img
-                alt="add-search"
-                src={
-                  Object {
-                    "ReactComponent": Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "render": [Function],
-                    },
-                    "__esModule": true,
-                    "default": "dash_icon.svg",
-                  }
-                }
-              />
-            </a>
-          </div>
-        </div>
-        <button
-          className="btn btn-primary"
-          disabled={false}
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
+      </div>
     </div>
   </div>
 </div>
@@ -399,218 +968,420 @@ exports[`Search Page Renders properly 1`] = `
 exports[`Search Result Page Renders properly 1`] = `
 <div>
   <h1
+    className="mt-5 mb-5 seer-header-styling"
     style={
       Object {
         "textAlign": "center",
       }
     }
   >
-    Query Results: 
+    Query Results:
+     
   </h1>
   <div
-    className="pro-sidebar"
-    style={
-      Object {
-        "width": undefined,
-      }
-    }
+    className="mr-1 row"
   >
     <div
-      className="pro-sidebar-inner"
+      className="col-sm-2"
     >
       <div
-        className="pro-sidebar-layout"
+        className="pro-sidebar"
+        style={
+          Object {
+            "width": undefined,
+          }
+        }
       >
         <div
-          className="pro-sidebar-header"
+          className="pro-sidebar-inner"
         >
-          <nav
-            className="pro-menu shaped square"
+          <div
+            className="pro-sidebar-layout"
           >
-            <ul>
-              <li
-                className="pro-menu-item pro-sub-menu"
+            <div
+              className="pro-sidebar-header"
+            >
+              <nav
+                className="pro-menu"
               >
-                <div
-                  className="pro-inner-item"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <span
-                    className="pro-item-content"
+                <ul>
+                  <li
+                    className="pro-menu-item pro-sub-menu"
                   >
-                    Search Filters:
-                  </span>
-                  <span
-                    className="pro-arrow-wrapper"
+                    <div
+                      className="pro-inner-item"
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <span
+                        className="pro-item-content"
+                      >
+                        Search Filters:
+                      </span>
+                      <span
+                        className="pro-arrow-wrapper"
+                      >
+                        <span
+                          className="pro-arrow"
+                        />
+                      </span>
+                    </div>
+                    <div
+                      className="react-slidedown pro-inner-list-item"
+                      onTransitionEnd={[Function]}
+                    >
+                      <div>
+                        <ul>
+                          <form
+                            className=""
+                            onSubmit={[Function]}
+                          >
+                            <div
+                              className="row"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                <label
+                                  className="form-label"
+                                  htmlFor="researchMethod"
+                                >
+                                  Research Method
+                                </label>
+                                <select
+                                  className="form-control"
+                                  defaultValue=""
+                                  id="researchMethod"
+                                  onChange={[Function]}
+                                  style={
+                                    Object {
+                                      "width": "12vw",
+                                    }
+                                  }
+                                  type="text"
+                                >
+                                  <option
+                                    disabled={true}
+                                    value=""
+                                  >
+                                    Select Research Method
+                                  </option>
+                                </select>
+                              </div>
+                            </div>
+                            <div
+                              className="row"
+                            >
+                              <div
+                                className="form-group"
+                                style={
+                                  Object {
+                                    "width": "12vw",
+                                  }
+                                }
+                              >
+                                <label
+                                  className="form-label"
+                                  htmlFor="participants_form"
+                                >
+                                  Research Participants
+                                </label>
+                              </div>
+                            </div>
+                            <div
+                              className="row"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                <label
+                                  className="form-label"
+                                  htmlFor="evidenceItem"
+                                >
+                                  Evidence Item
+                                </label>
+                                <select
+                                  className="form-control"
+                                  defaultValue=""
+                                  id="evidenceItem"
+                                  onChange={[Function]}
+                                  style={
+                                    Object {
+                                      "width": "12vw",
+                                    }
+                                  }
+                                  type="text"
+                                >
+                                  <option
+                                    disabled={true}
+                                    value=""
+                                  >
+                                    Select Evidence Item
+                                  </option>
+                                  <option
+                                    value="article_title"
+                                  >
+                                    Outcome/Benefit
+                                  </option>
+                                  <option
+                                    value="article_name"
+                                  >
+                                    Context
+                                  </option>
+                                  <option
+                                    value="article_author"
+                                  >
+                                    Result
+                                  </option>
+                                </select>
+                              </div>
+                            </div>
+                            <div
+                              className="row"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                <label
+                                  className="form-label"
+                                  htmlFor="method"
+                                >
+                                  SE Method
+                                </label>
+                                <select
+                                  className="form-control"
+                                  defaultValue=""
+                                  id="method"
+                                  onChange={[Function]}
+                                  style={
+                                    Object {
+                                      "width": "12vw",
+                                    }
+                                  }
+                                  type="text"
+                                >
+                                  <option
+                                    disabled={true}
+                                    value=""
+                                  >
+                                    Select SE Method
+                                  </option>
+                                </select>
+                              </div>
+                            </div>
+                            <div
+                              className="row"
+                            >
+                              <div
+                                className="form-group"
+                              >
+                                <label
+                                  className="form-label"
+                                  htmlFor="methodology"
+                                >
+                                  SE Methodology
+                                </label>
+                                <select
+                                  className="form-control"
+                                  defaultValue=""
+                                  id="methodology"
+                                  onChange={[Function]}
+                                  style={
+                                    Object {
+                                      "width": "12vw",
+                                    }
+                                  }
+                                  type="text"
+                                >
+                                  <option
+                                    disabled={true}
+                                    value=""
+                                  >
+                                    Select SE Methodology
+                                  </option>
+                                </select>
+                              </div>
+                            </div>
+                            <div
+                              className="row"
+                            >
+                              <label
+                                className="form-label"
+                              >
+                                Publication Details: 
+                              </label>
+                              <div
+                                className="form-group"
+                              >
+                                <input
+                                  className="form-control"
+                                  id="authorSearch"
+                                  placeholder="Author"
+                                  type="text"
+                                />
+                              </div>
+                              <div
+                                className="form-group"
+                              >
+                                <input
+                                  className="form-control"
+                                  id="titleSearch"
+                                  placeholder="Title"
+                                  type="text"
+                                />
+                              </div>
+                              <div
+                                className="form-group"
+                              >
+                                <input
+                                  className="form-control"
+                                  id="linkSearch"
+                                  placeholder="URL or DOI"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                          </form>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div
+              className="pro-sidebar-content"
+            >
+              <nav
+                className="pro-menu"
+              >
+                <ul>
+                  <li
+                    className="pro-menu-item pro-sub-menu"
                   >
-                    <span
-                      className="pro-arrow"
-                    />
-                  </span>
-                </div>
-                <div
-                  className="react-slidedown pro-inner-list-item"
-                  onTransitionEnd={[Function]}
-                >
-                  <div>
-                    <ul>
-                      <li
-                        className="pro-menu-item"
+                    <div
+                      className="pro-inner-item"
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <span
+                        className="pro-item-content"
                       >
-                        <div
-                          className="pro-inner-item"
-                          role="button"
-                          tabIndex={0}
-                        >
-                          <span
-                            className="pro-item-content"
-                          >
-                            Component 1
-                          </span>
-                        </div>
-                      </li>
-                      <li
-                        className="pro-menu-item pro-sub-menu"
+                        Sort Results By:
+                      </span>
+                      <span
+                        className="pro-arrow-wrapper"
                       >
-                        <div
-                          className="pro-inner-item"
-                          onClick={[Function]}
-                          onKeyPress={[Function]}
-                          role="button"
-                          tabIndex={0}
-                        >
-                          <span
-                            className="pro-item-content"
+                        <span
+                          className="pro-arrow"
+                        />
+                      </span>
+                    </div>
+                    <div
+                      className="react-slidedown pro-inner-list-item"
+                      onTransitionEnd={[Function]}
+                    >
+                      <div>
+                        <ul>
+                          <li
+                            className="pro-menu-item"
                           >
-                            Sub Component 1
-                          </span>
-                          <span
-                            className="pro-arrow-wrapper"
+                            <div
+                              className="pro-inner-item"
+                              role="button"
+                              tabIndex={0}
+                            >
+                              <span
+                                className="pro-item-content"
+                              >
+                                User Ratings
+                              </span>
+                            </div>
+                          </li>
+                           
+                          <li
+                            className="pro-menu-item"
                           >
-                            <span
-                              className="pro-arrow"
-                            />
-                          </span>
-                        </div>
-                        <div
-                          className="react-slidedown pro-inner-list-item"
-                          onTransitionEnd={[Function]}
-                        >
-                          <div>
-                            <ul />
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </nav>
+                            <div
+                              className="pro-inner-item"
+                              role="button"
+                              tabIndex={0}
+                            >
+                              <span
+                                className="pro-item-content"
+                              >
+                                Reviews Quantity
+                              </span>
+                            </div>
+                          </li>
+                           
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
         <div
-          className="pro-sidebar-content"
-        >
-          <nav
-            className="pro-menu shaped square"
-          >
-            <ul>
-              <li
-                className="pro-menu-item pro-sub-menu"
-              >
-                <div
-                  className="pro-inner-item"
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <span
-                    className="pro-item-content"
-                  >
-                    Sort By:
-                  </span>
-                  <span
-                    className="pro-arrow-wrapper"
-                  >
-                    <span
-                      className="pro-arrow"
-                    />
-                  </span>
-                </div>
-                <div
-                  className="react-slidedown pro-inner-list-item"
-                  onTransitionEnd={[Function]}
-                >
-                  <div>
-                    <ul>
-                      <li
-                        className="pro-menu-item"
-                      >
-                        <div
-                          className="pro-inner-item"
-                          role="button"
-                          tabIndex={0}
-                        >
-                          <span
-                            className="pro-item-content"
-                          >
-                            Component 1
-                          </span>
-                        </div>
-                      </li>
-                      <li
-                        className="pro-menu-item pro-sub-menu"
-                      >
-                        <div
-                          className="pro-inner-item"
-                          onClick={[Function]}
-                          onKeyPress={[Function]}
-                          role="button"
-                          tabIndex={0}
-                        >
-                          <span
-                            className="pro-item-content"
-                          >
-                            Sub Component 1
-                          </span>
-                          <span
-                            className="pro-arrow-wrapper"
-                          >
-                            <span
-                              className="pro-arrow"
-                            />
-                          </span>
-                        </div>
-                        <div
-                          className="react-slidedown pro-inner-list-item"
-                          onTransitionEnd={[Function]}
-                        >
-                          <div>
-                            <ul />
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </nav>
-        </div>
+          aria-label="overlay"
+          className="overlay"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          role="button"
+          tabIndex={0}
+        />
       </div>
     </div>
     <div
-      aria-label="overlay"
-      className="overlay"
-      onClick={[Function]}
-      onKeyPress={[Function]}
-      role="button"
-      tabIndex={0}
-    />
+      className="col-sm-10"
+    >
+      <div
+        className="table-responsive"
+      >
+        <table
+          className="table table-bordered table-hover"
+        >
+          <thead>
+            <tr>
+              <th>
+                #
+              </th>
+              <th>
+                Title
+              </th>
+              <th>
+                Authors
+              </th>
+              <th>
+                Journals
+              </th>
+              <th>
+                Publishers
+              </th>
+              <th>
+                Volume
+              </th>
+              <th>
+                Pages
+              </th>
+              <th>
+                Publish Date
+              </th>
+              <th>
+                Article Link
+              </th>
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -620,7 +1391,7 @@ exports[`Sign Up Renders properly 1`] = `
   className="container"
 >
   <div
-    className="container"
+    className="mt-5 container"
   >
     <h1
       style={
