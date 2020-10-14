@@ -4,5 +4,13 @@
 
 .searchFieldContainer button {
   margin-top: 25px;
-  float: right;
+  padding: 15px 50px 15px 50px;
+  background-color: #008000;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchFieldContainer button:hover {
+  background-color: #3CB371;
 }

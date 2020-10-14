@@ -2,9 +2,9 @@ import React from "react";
 import "./NavigationBar.css";
 import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { Link } from "react-router-dom";
 
-class NavigationBar extends React.Component {
+
+class NavBar2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,32 +46,6 @@ class NavigationBar extends React.Component {
             <LinkContainer to="/search">
               <Nav.Link> Advanced Search</Nav.Link>
             </LinkContainer>
-            <Form inline id="navbar-search" onSubmit={this.onSubmit}>
-              <Form.Group controlId="title">
-                <FormControl
-                  required
-                  type="text"
-                  placeholder="Enter a keyword to quick search"
-                  className="mr-sm-2"
-                  value={this.state.title}
-                  onChange={this.formOnChangeHandler}
-                />
-                <Link
-                  to={{
-                    pathname: "search-result",
-                    search: `?search_type=any&title=${this.state.title}`,
-                  }}
-                >
-                  <Button variant="outline-success" type="submit">
-                    {" "}
-                    <img
-                      src={require("../../assets/icons/search_icon.svg")}
-                      id="search_icon"
-                    />{" "}
-                  </Button>
-                </Link>
-              </Form.Group>
-            </Form>
           </Nav>
           <img
             src={require("../../assets/icons/placeholder_circle.png")}
@@ -83,4 +57,4 @@ class NavigationBar extends React.Component {
   }
 };
 
-export default NavigationBar;
+export default NavBar2;

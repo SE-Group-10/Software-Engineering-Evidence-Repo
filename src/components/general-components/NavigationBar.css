@@ -1,5 +1,4 @@
 .navBar {
-    margin-bottom: 40px;
     padding-top: 15px;
     padding-bottom: 15px;
 
@@ -9,6 +8,8 @@
     border-bottom-width: 1px;
     border-bottom-color: black;
     border-bottom-style: solid;
+
+    color: #00994C;
 }
 
 
@@ -29,9 +30,4 @@
 #login_placeholder {
     width: 3em;
     height: auto;
-}
-
-
-#navbar_search{
-    align: center;
 }

@@ -5,29 +5,28 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 class SearchField extends React.Component {
   render() {
     return (
-      <Container fluid className="searchFieldContainer">
-        <Container>
+      <div className="searchFieldContainer">
           <Form>
             {/** Description Search Form Group */}
             <Form.Group controlId="descriptionSearch">
               <Form.Label>
-                <h4>Description</h4>
+                <h4>Search:</h4>
               </Form.Label>
-              <Form.Control type="text" />
+              <Form.Control type="text" placeholder="Enter a keyword or phrase to search for evidences" />
             </Form.Group>
             {/** Date Form Group */}
             <Form.Group controlId="dateRangeSearch">
               <Row>
                 <Col sm={2}>
                   <Form.Label>
-                    <h4>Date Range:</h4>
+                    <h4>Document Date:</h4>
                   </Form.Label>
                 </Col>
                 <Col>
                   <Form.Control type="date" />
                 </Col>
                 <Col sm={1}>
-                  <h4>To</h4>
+                  <h4>to</h4>
                 </Col>
                 <Col>
                   <Form.Control type="date" />
@@ -90,8 +89,7 @@ class SearchField extends React.Component {
               Submit
             </Button>
           </Form>
-        </Container>
-      </Container>
+      </div>
     );
   }
 }
