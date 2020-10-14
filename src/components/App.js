@@ -4,6 +4,7 @@ import NavigationBar from "./general-components/NavigationBar";
 import HomePage from "./pages/HomePage.js";
 import SearchPage from "./pages/SearchPage.js";
 import DashboardPage from "./pages/DashboardPage";
+import AdminPage from "./pages/AdminPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import SearchResultPage from "./pages/SearchResultPage";
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <NavigationBar />
-      <Container fluid className="App-header">
+      <Container className="App-header">
         <Switch>
           {/* General Pages */}
           <Route exact path={["/index.html", "/"]}>
@@ -23,6 +24,7 @@ function App() {
           </Route>
           <Route path="/home" component={HomePage} />
           <Route path="/search" component={SearchPage} />
+          <Route path="/admin" component={AdminPage} />
           <Route path="/dashboard" component={DashboardPage} />
 
           {/* Register-Login Pages */}

@@ -10,7 +10,6 @@ router.get("/", async (req, res) => {
   } catch (err) {
     res.json({ message: err });
   }
-  res.send("We are on Methodologies");
 });
 
 // SUBMIT A METHODOLOGY

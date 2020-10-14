@@ -6,13 +6,21 @@ const Method = require("../server_models/Method");
 
 // GET ALL THE ARTICLES
 router.get("/", async (req, res) => {
-  try {
-    const article = await Article.find();
-    res.json(article);
-  } catch (err) {
-    res.json({ message: err });
+  if (req.query.stage) {
+    try {
+      const article = await Article.find({ stage: req.query.stage });
+      res.json(article);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  } else {
+    try {
+      const article = await Article.find();
+      res.json(article);
+    } catch (err) {
+      res.json({ message: err });
+    }
   }
-  res.send("We are on articles");
 });
 
 // SUBMIT AN ARTICLE

@@ -1,0 +1,17 @@
+.adminTableHeader {
+  color: #00994c;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.adminUserActions {
+  margin-right: 10px;
+}
+.addRowButton {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.multiFormStyle {
+  text-align: left;
+}

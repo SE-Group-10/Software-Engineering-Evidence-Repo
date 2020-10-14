@@ -46,7 +46,6 @@ class NavigationBar extends React.Component {
             <LinkContainer to="/search">
               <Nav.Link> Advanced Search</Nav.Link>
             </LinkContainer>
-            <Nav.Link id="q_search">Quick Search: </Nav.Link>
             <Form inline id="navbar-search" onSubmit={this.onSubmit}>
               <Form.Group controlId="title">
                 <FormControl
@@ -66,6 +65,7 @@ class NavigationBar extends React.Component {
                   <Button variant="outline-success" type="submit">
                     {" "}
                     <img
+                      alt="search"
                       src={require("../../assets/icons/search_icon.svg")}
                       id="search_icon"
                     />{" "}
@@ -75,13 +75,20 @@ class NavigationBar extends React.Component {
             </Form>
           </Nav>
           <img
+            alt="circle"
             src={require("../../assets/icons/placeholder_circle.png")}
             id="login_placeholder"
           />
-      </Navbar.Collapse>
-    </Navbar>
-  );
+          <LinkContainer to="/login">
+            <Button id="nav_button">Login</Button>
+          </LinkContainer>
+          <LinkContainer to="/sign-up">
+            <Button id="nav_button">Sign Up</Button>
+          </LinkContainer>
+        </Navbar.Collapse>
+      </Navbar>
+    );
   }
-};
+}
 
 export default NavigationBar;
