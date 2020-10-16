@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchFilters.css";
-import { Form, Row, Button } from "react-bootstrap";
+import { Form, Row } from "react-bootstrap";
 import {
   ProSidebar,
   SidebarHeader,

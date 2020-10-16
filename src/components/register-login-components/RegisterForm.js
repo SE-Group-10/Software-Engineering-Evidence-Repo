@@ -59,7 +59,6 @@ class RegisterForm extends React.Component {
                 buttons: [false, true],
               });
             } else {
-              console.log("wat");
               bcrypt.hash(this.state.password, salt, async (err, hash) => {
                 if (err) {
                   // Error with Signing up

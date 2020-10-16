@@ -58,7 +58,7 @@ class ResearchMethodsTable extends React.Component {
           let rschMethodObj = {
             research_method_name: research_method_name,
           };
-          const postResponse = await api.post("/research_methods", rschMethodObj);
+          await api.post("/research_methods", rschMethodObj);
 
           // No Problems with Adding
           swal({
@@ -112,7 +112,7 @@ class ResearchMethodsTable extends React.Component {
           let rschMethodObj = {
             research_method_name: research_method_name,
           };
-          const editResponse = await api.patch(
+          await api.patch(
             "/research_methods/" + research_method._id,
             rschMethodObj
           );
@@ -148,9 +148,7 @@ class ResearchMethodsTable extends React.Component {
     }).then(async (value) => {
       if (value === true) {
         try {
-          const deleteResponse = await api.delete(
-            "/research_methods/" + research_method_id
-          );
+          await api.delete("/research_methods/" + research_method_id);
           // No Problems with Deletion
           swal({
             title: "Successful Deletion!",
@@ -208,7 +206,7 @@ class ResearchMethodsTable extends React.Component {
     }
 
     return (
-      <Container fluid>
+      <Container>
         <h1 className="adminTableHeader">Research Methods</h1>
         <Button
           className="addRowButton"

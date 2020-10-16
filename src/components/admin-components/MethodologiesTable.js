@@ -49,7 +49,7 @@ class MethodologiesTable extends React.Component {
             <Form.Label>Description</Form.Label>
             <Form.Control
               as="textarea"
-              rows="3"
+              rows="5"
               placeholder="Methodlogy Description"
             />
           </Form.Group>
@@ -72,7 +72,7 @@ class MethodologiesTable extends React.Component {
             methodology_name: methodology_name,
             description: description,
           };
-          const postResponse = await api.post("/methodologies", methodologyObj);
+          await api.post("/methodologies", methodologyObj);
 
           // No Problems with Adding
           swal({
@@ -113,7 +113,7 @@ class MethodologiesTable extends React.Component {
           <Form.Group controlId="methodology_description">
             <Form.Control
               as="textarea"
-              rows="3"
+              rows="5"
               placeholder="Description"
               defaultValue={
                 methodology.description ? methodology.description : ""
@@ -139,10 +139,7 @@ class MethodologiesTable extends React.Component {
             methodology_name: methodology_name,
             description: description,
           };
-          const editResponse = await api.patch(
-            "/methodologies/" + methodology._id,
-            methodologyObj
-          );
+          await api.patch("/methodologies/" + methodology._id, methodologyObj);
 
           // No Problems with Editing
           swal({
@@ -175,9 +172,7 @@ class MethodologiesTable extends React.Component {
     }).then(async (value) => {
       if (value === true) {
         try {
-          const deleteResponse = await api.delete(
-            "/methodologies/" + methodology_id
-          );
+          await api.delete("/methodologies/" + methodology_id);
           // No Problems with Deletion
           swal({
             title: "Successful Deletion!",
@@ -236,7 +231,7 @@ class MethodologiesTable extends React.Component {
     }
 
     return (
-      <Container fluid>
+      <Container>
         <h1 className="adminTableHeader">Methodology</h1>
         <Button
           className="addRowButton"

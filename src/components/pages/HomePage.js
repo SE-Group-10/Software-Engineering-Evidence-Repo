@@ -54,6 +54,7 @@ const HomePage = () => {
               {" "}
               <Link to="/search-result">
                 <img
+                  alt="search"
                   src={require("../../assets/icons/search_icon.svg")}
                   id="search_icon"
                 />{" "}

@@ -48,10 +48,6 @@ const ArticleEvidenceItem = new mongoose.Schema({
       type: String,
       required: true,
     },
-    description: {
-      type: String,
-      required: true,
-    },
   },
   method: {
     method_id: {
@@ -59,10 +55,6 @@ const ArticleEvidenceItem = new mongoose.Schema({
       required: true,
     },
     method_name: {
-      type: String,
-      required: true,
-    },
-    description: {
       type: String,
       required: true,
     },
@@ -88,11 +80,7 @@ const ResearchDesignSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      methodology_name: {
-        type: String,
-        required: true,
-      },
-      description: {
+      research_method_name: {
         type: String,
         required: true,
       },

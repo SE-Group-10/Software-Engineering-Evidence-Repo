@@ -48,8 +48,18 @@ function App() {
         <Route path="/search" component={SearchPage} />
 
         {/* Register-Login Pages */}
-        <Route path="/login" component={LoginPage} />
-        <Route path="/sign-up" component={SignUpPage} />
+        <Route
+          path="/login"
+          render={(props) =>
+            !isLoggedIn ? <LoginPage {...props} /> : <Redirect to="/home" />
+          }
+        />
+        <Route
+          path="/sign-up"
+          render={(props) =>
+            !isLoggedIn ? <SignUpPage {...props} /> : <Redirect to="/home" />
+          }
+        />
 
         <Route component={DefaultNavPages} />
       </Switch>

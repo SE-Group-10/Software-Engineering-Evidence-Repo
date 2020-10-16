@@ -1,6 +1,6 @@
 import "./LoginForm.css";
 import React from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
 import bcrypt from "bcryptjs";
 import swal from "@sweetalert/with-react";
@@ -95,7 +95,7 @@ class LoginForm extends React.Component {
     }
 
     return (
-      <Container className="loginStyle">
+      <div className="loginStyle">
         <Form onSubmit={this.onSubmit}>
           <h1>Seer Login</h1>
           <Form.Group controlId="email">
@@ -130,7 +130,7 @@ class LoginForm extends React.Component {
             </Button>
           </Link>
         </Form>
-      </Container>
+      </div>
     );
   }
 }

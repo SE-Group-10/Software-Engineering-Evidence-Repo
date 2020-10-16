@@ -43,3 +43,41 @@ code {
 .swal-button--confirm:hover {
   background-color: #018644 !important;
 }
+
+.addRowButton {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.multiFormStyle {
+  text-align: left;
+}
+
+.checkboxFormStyle {
+  max-height: 140px;
+  overflow-y: scroll;
+}
+
+hr {
+  height: 1px !important;
+  border-width: 0;
+  color: gray;
+  background-color: gray;
+}
+
+.tabsStyle a.nav-link {
+  border-color: #018644 !important;
+  color: white !important;
+  background-color: #00994c !important;
+}
+
+.tabsStyle a.nav-link:hover {
+  border-color: black !important;
+  color: white !important;
+  background-color: #03924a !important;
+}
+
+.nav-tabs .nav-link {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

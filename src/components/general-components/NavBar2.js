@@ -51,6 +51,7 @@ class NavBar2 extends React.Component {
             </LinkContainer>
           </Nav>
           <img
+            alt="circle"
             src={require("../../assets/icons/placeholder_circle.png")}
             id="login_placeholder"
           />

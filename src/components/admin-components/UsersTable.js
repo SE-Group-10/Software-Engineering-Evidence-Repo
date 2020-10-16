@@ -23,7 +23,6 @@ class UsersTable extends React.Component {
       this.setState({
         users: usersResponse.data,
       });
-    console.log(this.state.users);
   };
 
   componentDidMount() {
@@ -45,7 +44,7 @@ class UsersTable extends React.Component {
     }).then(async (value) => {
       if (value === true) {
         try {
-          const deleteResponse = await api.delete("/users/" + user_id);
+          await api.delete("/users/" + user_id);
           // No Problems with Deletion
           swal({
             title: "Successful Deletion!",
@@ -70,25 +69,25 @@ class UsersTable extends React.Component {
   render() {
     let usersArray = [];
     if (this.state.users) {
-      usersArray = this.state.users.map((users, index) => {
-        if (users.user_type !== "administrator") {
+      usersArray = this.state.users.map((user, index) => {
+        if (user.user_type !== "administrator") {
           return (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>{users.user_type}</td>
-              <td>{users.user_name}</td>
-              <td>{users.email}</td>
-              <td>{users.first_name}</td>
-              <td>{users.last_name}</td>
-              <td>{users.affiliation}</td>
-              <td>{users.datetime_created}</td>
-              <td>{users.datetime_updated}</td>
+              <td>{user.user_type}</td>
+              <td>{user.user_name}</td>
+              <td>{user.email}</td>
+              <td>{user.first_name}</td>
+              <td>{user.last_name}</td>
+              <td>{user.affiliation}</td>
+              <td>{user.datetime_created}</td>
+              <td>{user.datetime_updated}</td>
               <td>
                 <Button
                   className="adminUserActions"
                   variant="danger"
                   onClick={() => {
-                    this.deleteUser(users._id);
+                    this.deleteUser(user._id);
                   }}
                 >
                   Delete
@@ -96,12 +95,14 @@ class UsersTable extends React.Component {
               </td>
             </tr>
           );
+        } else {
+          return [];
         }
       });
     }
 
     return (
-      <Container fluid>
+      <Container>
         <h1 className="adminTableHeader">All Users</h1>
         <Table responsive bordered hover className="adminTableStyles">
           <thead>

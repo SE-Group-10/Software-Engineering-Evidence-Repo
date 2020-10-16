@@ -1,6 +1,6 @@
 import "./SearchField.css";
 import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 
 class SearchField extends React.Component {
   render() {
@@ -69,7 +69,7 @@ class SearchField extends React.Component {
                 </Form.Control>
               </Col>
               <Col sm={1}>
-                <a>
+                <a href="/">
                   <img
                     alt="add-search"
                     src={require("../../assets/icons/plus_icon.svg")}
@@ -77,7 +77,7 @@ class SearchField extends React.Component {
                 </a>
               </Col>
               <Col sm={1}>
-                <a>
+                <a href="/">
                   <img
                     alt="add-search"
                     src={require("../../assets/icons/dash_icon.svg")}

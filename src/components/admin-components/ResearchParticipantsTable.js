@@ -59,10 +59,7 @@ class ResearchParticipantsTable extends React.Component {
           let participantObj = {
             participant_type: participant_type,
           };
-          const postResponse = await api.post(
-            "/research_participants",
-            participantObj
-          );
+          await api.post("/research_participants", participantObj);
 
           // No Problems with Adding
           swal({
@@ -115,7 +112,7 @@ class ResearchParticipantsTable extends React.Component {
           let participantObj = {
             participant_type: participant_type,
           };
-          const editResponse = await api.patch(
+          await api.patch(
             "/research_participants/" + research_participant._id,
             participantObj
           );
@@ -151,9 +148,7 @@ class ResearchParticipantsTable extends React.Component {
     }).then(async (value) => {
       if (value === true) {
         try {
-          const deleteResponse = await api.delete(
-            "/research_participants/" + research_participant_id
-          );
+          await api.delete("/research_participants/" + research_participant_id);
           // No Problems with Deletion
           swal({
             title: "Successful Deletion!",
@@ -211,7 +206,7 @@ class ResearchParticipantsTable extends React.Component {
     }
 
     return (
-      <Container fluid>
+      <Container>
         <h1 className="adminTableHeader">Research Participants</h1>
         <Button
           className="addRowButton"

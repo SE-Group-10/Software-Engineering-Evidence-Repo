@@ -71,7 +71,7 @@ class MethodsTable extends React.Component {
             method_name: method_name,
             description: description,
           };
-          const postResponse = await api.post("/methods", methodObj);
+          api.post("/methods", methodObj);
 
           // No Problems with Adding
           swal({
@@ -132,10 +132,7 @@ class MethodsTable extends React.Component {
             method_name: method_name,
             description: description,
           };
-          const editResponse = await api.patch(
-            "/methods/" + method._id,
-            methodObj
-          );
+          await api.patch("/methods/" + method._id, methodObj);
 
           // No Problems with Editing
           swal({
@@ -168,7 +165,7 @@ class MethodsTable extends React.Component {
     }).then(async (value) => {
       if (value === true) {
         try {
-          const deleteResponse = await api.delete("/methods/" + method_id);
+          await api.delete("/methods/" + method_id);
           // No Problems with Deletion
           swal({
             title: "Successful Deletion!",
@@ -225,7 +222,7 @@ class MethodsTable extends React.Component {
     }
 
     return (
-      <Container fluid>
+      <Container>
         <h1 className="adminTableHeader">Methods</h1>
         <Button
           className="addRowButton"
