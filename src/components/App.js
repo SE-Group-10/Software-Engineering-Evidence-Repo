@@ -12,6 +12,7 @@ import SearchResultPage from "./pages/SearchResultPage";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import AnalystQueuePage from "./pages/AnalystQueuePage";
 import ScrollToTop from "./general-components/ScrollToTop";
+import ModeratorPage from "./pages/ModeratorPage";
 
 function App() {
   const location = useLocation();
@@ -30,6 +31,8 @@ function App() {
 
         {/* Analyst Pages */}
         <Route path="/analyst-queue" component={AnalystQueuePage} />
+
+        <Route path="/moderator"  component={ModeratorPage} />
 
         {/* Search Results Page */}
         <Route path="/search-result" component={SearchResultPage} />
