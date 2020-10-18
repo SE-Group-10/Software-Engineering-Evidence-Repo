@@ -1,14 +1,8 @@
 import React from "react";
 import "./SearchFilters.css";
-import { Form, Row } from "react-bootstrap";
-import {
-  ProSidebar,
-  SidebarHeader,
-  SidebarContent,
-  Menu,
-  SubMenu,
-  MenuItem,
-} from "react-pro-sidebar";
+import { Button, Form, Row } from "react-bootstrap";
+import { ProSidebar, SidebarHeader, Menu, SubMenu } from "react-pro-sidebar";
+import { Redirect } from "react-router-dom";
 import swal from "@sweetalert/with-react";
 import "react-pro-sidebar/dist/css/styles.css";
 import api from "../../api/api";
@@ -22,8 +16,8 @@ class SearchFilters extends React.Component {
       researchMethods: [],
       researchParticipants: [],
 
-      authorSearch: "",
       titleSearch: "",
+      authorSearch: "",
       linkSearch: "",
       methodology: "",
       method: "",
@@ -90,9 +84,70 @@ class SearchFilters extends React.Component {
 
   onSubmit = (event) => {
     event.preventDefault();
+    // evidenceItem: "",
+
+    let searchQuery = "";
+    if (this.state.titleSearch) {
+      searchQuery = searchQuery.concat("title=" + this.state.titleSearch);
+    }
+    if (this.state.authorSearch) {
+      searchQuery =
+        searchQuery.length > 0
+          ? searchQuery.concat("&author=" + this.state.authorSearch)
+          : searchQuery.concat("author=" + this.state.authorSearch);
+    }
+    if (this.state.linkSearch) {
+      searchQuery =
+        searchQuery.length > 0
+          ? searchQuery.concat("&article_link=" + this.state.linkSearch)
+          : searchQuery.concat("article_link=" + this.state.linkSearch);
+    }
+    if (this.state.methodology) {
+      searchQuery =
+        searchQuery.length > 0
+          ? searchQuery.concat("&methodology=" + this.state.methodology)
+          : searchQuery.concat("methodology=" + this.state.methodology);
+    }
+    if (this.state.method) {
+      searchQuery =
+        searchQuery.length > 0
+          ? searchQuery.concat("&method=" + this.state.method)
+          : searchQuery.concat("method=" + this.state.method);
+    }
+    if (this.state.researchMethod) {
+      searchQuery =
+        searchQuery.length > 0
+          ? searchQuery.concat("&research_method=" + this.state.researchMethod)
+          : searchQuery.concat("research_method=" + this.state.researchMethod);
+    }
+    if (this.state.chosenResearchParticipant) {
+      searchQuery =
+        searchQuery.length > 0
+          ? searchQuery.concat(
+              "&participant=" + this.state.chosenResearchParticipant
+            )
+          : searchQuery.concat(
+              "participant=" + this.state.chosenResearchParticipant
+            );
+    }
+    this.setState({
+      searchQuery: searchQuery,
+      redirect: true,
+    });
   };
 
   render() {
+    if (this.state.redirect) {
+      return (
+        <Redirect
+          to={{
+            pathname: "search-result",
+            search: `?${this.state.searchQuery}`,
+          }}
+        />
+      );
+    }
+
     let methodologiesArray = [];
     if (this.state.methodologies) {
       methodologiesArray = this.state.methodologies.map(
@@ -136,7 +191,6 @@ class SearchFilters extends React.Component {
         (researchParticipant, index) => {
           return (
             <Form.Check
-              required
               key={index}
               type="radio"
               label={researchParticipant.participant_type}
@@ -180,25 +234,6 @@ class SearchFilters extends React.Component {
                   >
                     <Form.Label>Research Participants</Form.Label>
                     {researchParticipantsArray}
-                  </Form.Group>
-                </Row>
-                <Row>
-                  <Form.Group controlId="evidenceItem">
-                    <Form.Label>Evidence Item</Form.Label>
-                    <Form.Control
-                      as="select"
-                      type="text"
-                      defaultValue=""
-                      style={{ width: "12vw" }}
-                      onChange={this.formOnChangeHandler}
-                    >
-                      <option value="" disabled>
-                        Select Evidence Item
-                      </option>
-                      <option value="article_title">Outcome/Benefit</option>
-                      <option value="article_name">Context</option>
-                      <option value="article_author">Result</option>
-                    </Form.Control>
                   </Form.Group>
                 </Row>
                 <Row>
@@ -247,20 +282,13 @@ class SearchFilters extends React.Component {
                     <Form.Control type="text" placeholder="URL or DOI" />
                   </Form.Group>
                 </Row>
+                <Button className="seer-button-styling" type="submit">
+                  Search
+                </Button>
               </Form>
             </SubMenu>
           </Menu>
         </SidebarHeader>
-        <SidebarContent>
-          <Menu>
-            <SubMenu title="Sort Results By:">
-              <MenuItem>User Ratings</MenuItem>{" "}
-              {/*TODO: Add fn to perform sort from high - low ratings */}
-              <MenuItem>Reviews Quantity</MenuItem>{" "}
-              {/* TODO: Add fn to perform sort based on number of reviews.*/}
-            </SubMenu>
-          </Menu>
-        </SidebarContent>
       </ProSidebar>
     );
   }

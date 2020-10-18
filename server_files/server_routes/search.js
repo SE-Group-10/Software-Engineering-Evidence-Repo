@@ -5,39 +5,33 @@ const Article = require("../server_models/Article");
 // SEARCH FOR ARTICLE BASED ON SEARCH TYPE
 router.get("/", async (req, res) => {
   let searchQuery = {
-    $or: [],
+    stage: "approved",
+    $and: [],
   };
+  console.log(req.query);
   if (req.query.title) {
-    searchQuery.$or.push({
+    searchQuery.$and.push({
       title: { $regex: `${req.query.title}`, $options: "i" },
     });
   }
-  if (req.query.document_type) {
-    searchQuery.$or.push({
-      document_type: {
-        $regex: `${req.query.document_type}`,
-        options: "i",
-      },
-    });
-  }
   if (req.query.authors) {
-    searchQuery.$or.push({
+    searchQuery.$and.push({
       authors: { $regex: `${req.query.authors}`, $options: "i" },
     });
   }
   if (req.query.publisher) {
-    searchQuery.$or.push({
+    searchQuery.$and.push({
       publisher: { $regex: `${req.query.publisher}`, $options: "i" },
     });
   }
   if (req.query.min_date && req.query.max_date) {
-    searchQuery.$or.push({
+    searchQuery.$and.push({
       publish_date: { $gte: req.query.min_date, $lte: req.query.max_date },
     });
   }
   if (req.query.methodology_name) {
-    searchQuery.$or.push({
-      methodology: {
+    searchQuery.$and.push({
+      methodologies: {
         $elemMatch: {
           methodology_name: {
             $regex: `${req.query.methodology_name}`,
@@ -47,9 +41,9 @@ router.get("/", async (req, res) => {
       },
     });
   }
-  if (req.query.method) {
-    searchQuery.$or.push({
-      research_methods: {
+  if (req.query.method_name) {
+    searchQuery.$and.push({
+      methods: {
         $elemMatch: {
           method_name: {
             $regex: `${req.query.method_name}`,
@@ -60,7 +54,7 @@ router.get("/", async (req, res) => {
     });
   }
   if (req.query.research_method_name) {
-    searchQuery.$or.push({
+    searchQuery.$and.push({
       research_methods: {
         $elemMatch: {
           research_method_name: {
@@ -72,7 +66,7 @@ router.get("/", async (req, res) => {
     });
   }
   if (req.query.participant_type) {
-    searchQuery.$or.push({
+    searchQuery.$and.push({
       participants: {
         $elemMatch: {
           participant_type: {
@@ -84,9 +78,15 @@ router.get("/", async (req, res) => {
     });
   }
 
+  console.log(searchQuery);
   try {
-    const resultArticle = await Article.find(searchQuery);
-    res.json(resultArticle);
+    const resultArticle = await Article.find(searchQuery, (err, docs) => {
+      if (!err) {
+        console.log(docs);
+        res.json(docs);
+      }
+    });
+    // res.json(resultArticle);
   } catch (err) {
     res.json({ message: err });
   }

@@ -159,12 +159,39 @@ class ArticleTableModeration extends React.Component {
               {article.start_page} - {article.end_page}
             </td>
             <td>
-              {article.publish_date
-                ? `${monthNames[publish_date.getMonth()]}, ${publish_date.getFullYear()}`
-                : "NaN"}
+              {article.publish_date &&
+                `${
+                  monthNames[publish_date.getMonth()]
+                }, ${publish_date.getFullYear()}`}
             </td>
-            <td>{article.article_evidence_items.join(", ")}</td>
-            <td>{article.article_research_designs.join(", ")}</td>
+            <td>
+              {article.methodologies
+                .map((methodology) => {
+                  return methodology.methodology_name;
+                })
+                .join(", ")}
+            </td>
+            <td>
+              {article.methods
+                .map((method) => {
+                  return method.method_name;
+                })
+                .join(", ")}
+            </td>
+            <td>
+              {article.research_methods
+                .map((research_method) => {
+                  return research_method.research_method_name;
+                })
+                .join(", ")}
+            </td>
+            <td>
+              {article.participants
+                .map((participant) => {
+                  return participant.participant_type;
+                })
+                .join(", ")}
+            </td>
             <td>{article.article_link}</td>
             <td>
               <Button
@@ -206,8 +233,10 @@ class ArticleTableModeration extends React.Component {
               <th>Volume</th>
               <th>Article Page/s</th>
               <th>Publish Date</th>
-              <th>Article Evidence Items</th>
-              <th>Article Research Designs</th>
+              <th>SE Methodologies</th>
+              <th>SE Methods</th>
+              <th>Research Methods</th>
+              <th>Research Participants</th>
               <th>Article Link</th>
               <th>Actions</th>
             </tr>

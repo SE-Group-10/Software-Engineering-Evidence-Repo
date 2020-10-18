@@ -41,11 +41,12 @@ class NavBar2 extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {this.props.isLoggedIn && (
-              <LinkContainer to="/dashboard">
-                <Nav.Link className="nav-link">Dashboard</Nav.Link>
-              </LinkContainer>
-            )}
+            {this.props.isLoggedIn &&
+              this.props.user_information.user_type !== "user" && (
+                <LinkContainer to="/dashboard">
+                  <Nav.Link className="nav-link">Dashboard</Nav.Link>
+                </LinkContainer>
+              )}
             <LinkContainer to="/search">
               <Nav.Link> Advanced Search</Nav.Link>
             </LinkContainer>
@@ -65,15 +66,20 @@ class NavBar2 extends React.Component {
               </LinkContainer>
             </React.Fragment>
           ) : (
-            <LinkContainer
-              to="/home"
-              className="nav_button"
-              onClick={() => {
-                this.props.signout();
-              }}
-            >
-              <Button className="nav_button">Logout</Button>
-            </LinkContainer>
+            <React.Fragment>
+              <LinkContainer to="/article-posting">
+                <Button className="nav_button">Post An Article</Button>
+              </LinkContainer>
+              <LinkContainer
+                to="/home"
+                className="nav_button"
+                onClick={() => {
+                  this.props.signout();
+                }}
+              >
+                <Button className="nav_button">Logout</Button>
+              </LinkContainer>
+            </React.Fragment>
           )}
         </Navbar.Collapse>
       </Navbar>
@@ -83,6 +89,7 @@ class NavBar2 extends React.Component {
 
 const mapStateToProps = (state) => ({
   isLoggedIn: state.seerUserReducer.isLoggedIn,
+  user_information: state.seerUserReducer.user_information,
 });
 
 const mapDispatchToProps = () => {

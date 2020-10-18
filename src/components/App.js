@@ -8,6 +8,7 @@ import DashboardPage from "./pages/DashboardPage";
 import AdminPage from "./pages/AdminPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import SubmissionPage from "./pages/SubmissionPage";
 import SearchResultPage from "./pages/SearchResultPage";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import AnalystQueuePage from "./pages/AnalystQueuePage";
@@ -27,6 +28,7 @@ function App() {
           }
         />
         <Route path="/admin" component={AdminPage} />
+        <Route path="/article-posting" component={SubmissionPage} />
 
         {/* Analyst Pages */}
         <Route path="/analyst-queue" component={AnalystQueuePage} />

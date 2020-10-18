@@ -2,6 +2,10 @@
   width: 300px;
 }
 
+.pro-sidebar .row {
+  margin-left: 3px;
+}
+
 
 .queryFilter {
   align-self: left;

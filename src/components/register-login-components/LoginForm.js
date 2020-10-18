@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
           userResponse.data.password,
           (err, result) => {
             if (err || !result) {
-              // Error with Signing up
+              // Login Error
               swal({
                 title: "Login Unsuccessful!",
                 text: "Please input a valid email and password",
@@ -52,7 +52,7 @@ class LoginForm extends React.Component {
                 last_name: userResponse.data.last_name,
                 saved_searches: userResponse.data.saved_searches,
               };
-              // Error with Signing up
+              // Login Success
               swal({
                 title: "Login Successful!",
                 text: "You are now logged in! Redirecting to your dashboard...",
@@ -69,7 +69,7 @@ class LoginForm extends React.Component {
           }
         );
       } else {
-        // Error with Signing up
+        // Login Error
         swal({
           title: "Login Unsuccessful!",
           text: "Please input a valid email and password",
@@ -111,13 +111,6 @@ class LoginForm extends React.Component {
             <Form.Control
               type="password"
               placeholder="Password"
-              onChange={this.formOnChangeHandler}
-            />
-          </Form.Group>
-          <Form.Group controlId="formBasicCheckbox">
-            <Form.Check
-              type="checkbox"
-              label="Remember Me"
               onChange={this.formOnChangeHandler}
             />
           </Form.Group>

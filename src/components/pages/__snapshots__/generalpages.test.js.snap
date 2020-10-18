@@ -121,6 +121,7 @@ exports[`Home Page Renders properly 1`] = `
       <form
         className="form-inline"
         id="navbar-search"
+        onSubmit={[Function]}
         style={
           Object {
             "display": "block",
@@ -131,6 +132,8 @@ exports[`Home Page Renders properly 1`] = `
       >
         <input
           className="mr-sm-2 form-control"
+          id="title"
+          onChange={[Function]}
           placeholder="Search for articles, books or researches"
           style={
             Object {
@@ -147,29 +150,24 @@ exports[`Home Page Renders properly 1`] = `
               "backgroundColor": "white",
             }
           }
-          type="button"
+          type="submit"
         >
            
-          <a
-            href="/search-result"
-            onClick={[Function]}
-          >
-            <img
-              alt="search"
-              id="search_icon"
-              src={
-                Object {
-                  "ReactComponent": Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "render": [Function],
-                  },
-                  "__esModule": true,
-                  "default": "search_icon.svg",
-                }
+          <img
+            alt="search"
+            id="search_icon"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "search_icon.svg",
               }
-            />
-             
-          </a>
+            }
+          />
+           
         </button>
       </form>
     </div>
@@ -262,28 +260,6 @@ exports[`Login Page Renders properly 1`] = `
           placeholder="Password"
           type="password"
         />
-      </div>
-      <div
-        className="form-group"
-      >
-        <div
-          className="form-check"
-        >
-          <input
-            className="form-check-input"
-            disabled={false}
-            id="formBasicCheckbox"
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="form-check-label"
-            htmlFor="formBasicCheckbox"
-            title=""
-          >
-            Remember Me
-          </label>
-        </div>
       </div>
       <button
         className="seer-button-styling mr-2 btn btn-primary"
@@ -500,54 +476,6 @@ exports[`Search Page Renders properly 1`] = `
                                 >
                                   <label
                                     className="form-label"
-                                    htmlFor="evidenceItem"
-                                  >
-                                    Evidence Item
-                                  </label>
-                                  <select
-                                    className="form-control"
-                                    defaultValue=""
-                                    id="evidenceItem"
-                                    onChange={[Function]}
-                                    style={
-                                      Object {
-                                        "width": "12vw",
-                                      }
-                                    }
-                                    type="text"
-                                  >
-                                    <option
-                                      disabled={true}
-                                      value=""
-                                    >
-                                      Select Evidence Item
-                                    </option>
-                                    <option
-                                      value="article_title"
-                                    >
-                                      Outcome/Benefit
-                                    </option>
-                                    <option
-                                      value="article_name"
-                                    >
-                                      Context
-                                    </option>
-                                    <option
-                                      value="article_author"
-                                    >
-                                      Result
-                                    </option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div
-                                className="row"
-                              >
-                                <div
-                                  className="form-group"
-                                >
-                                  <label
-                                    className="form-label"
                                     htmlFor="method"
                                   >
                                     SE Method
@@ -645,82 +573,14 @@ exports[`Search Page Renders properly 1`] = `
                                   />
                                 </div>
                               </div>
+                              <button
+                                className="seer-button-styling btn btn-primary"
+                                disabled={false}
+                                type="submit"
+                              >
+                                Search
+                              </button>
                             </form>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div
-                className="pro-sidebar-content"
-              >
-                <nav
-                  className="pro-menu"
-                >
-                  <ul>
-                    <li
-                      className="pro-menu-item pro-sub-menu"
-                    >
-                      <div
-                        className="pro-inner-item"
-                        onClick={[Function]}
-                        onKeyPress={[Function]}
-                        role="button"
-                        tabIndex={0}
-                      >
-                        <span
-                          className="pro-item-content"
-                        >
-                          Sort Results By:
-                        </span>
-                        <span
-                          className="pro-arrow-wrapper"
-                        >
-                          <span
-                            className="pro-arrow"
-                          />
-                        </span>
-                      </div>
-                      <div
-                        className="react-slidedown pro-inner-list-item"
-                        onTransitionEnd={[Function]}
-                      >
-                        <div>
-                          <ul>
-                            <li
-                              className="pro-menu-item"
-                            >
-                              <div
-                                className="pro-inner-item"
-                                role="button"
-                                tabIndex={0}
-                              >
-                                <span
-                                  className="pro-item-content"
-                                >
-                                  User Ratings
-                                </span>
-                              </div>
-                            </li>
-                             
-                            <li
-                              className="pro-menu-item"
-                            >
-                              <div
-                                className="pro-inner-item"
-                                role="button"
-                                tabIndex={0}
-                              >
-                                <span
-                                  className="pro-item-content"
-                                >
-                                  Reviews Quantity
-                                </span>
-                              </div>
-                            </li>
-                             
                           </ul>
                         </div>
                       </div>
@@ -973,23 +833,14 @@ exports[`Search Page Renders properly 1`] = `
 `;
 
 exports[`Search Result Page Renders properly 1`] = `
-<div>
-  <h1
-    className="mt-5 mb-5 seer-header-styling"
-    style={
-      Object {
-        "textAlign": "center",
-      }
-    }
-  >
-    Query Results:
-     
-  </h1>
+<div
+  className="searchSectionStyle container-fluid"
+>
   <div
-    className="mr-1 row"
+    className="row"
   >
     <div
-      className="col-sm-2"
+      className="searchFilterResult col-sm-2"
     >
       <div
         className="pro-sidebar"
@@ -1105,54 +956,6 @@ exports[`Search Result Page Renders properly 1`] = `
                               >
                                 <label
                                   className="form-label"
-                                  htmlFor="evidenceItem"
-                                >
-                                  Evidence Item
-                                </label>
-                                <select
-                                  className="form-control"
-                                  defaultValue=""
-                                  id="evidenceItem"
-                                  onChange={[Function]}
-                                  style={
-                                    Object {
-                                      "width": "12vw",
-                                    }
-                                  }
-                                  type="text"
-                                >
-                                  <option
-                                    disabled={true}
-                                    value=""
-                                  >
-                                    Select Evidence Item
-                                  </option>
-                                  <option
-                                    value="article_title"
-                                  >
-                                    Outcome/Benefit
-                                  </option>
-                                  <option
-                                    value="article_name"
-                                  >
-                                    Context
-                                  </option>
-                                  <option
-                                    value="article_author"
-                                  >
-                                    Result
-                                  </option>
-                                </select>
-                              </div>
-                            </div>
-                            <div
-                              className="row"
-                            >
-                              <div
-                                className="form-group"
-                              >
-                                <label
-                                  className="form-label"
                                   htmlFor="method"
                                 >
                                   SE Method
@@ -1250,82 +1053,14 @@ exports[`Search Result Page Renders properly 1`] = `
                                 />
                               </div>
                             </div>
+                            <button
+                              className="seer-button-styling btn btn-primary"
+                              disabled={false}
+                              type="submit"
+                            >
+                              Search
+                            </button>
                           </form>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div
-              className="pro-sidebar-content"
-            >
-              <nav
-                className="pro-menu"
-              >
-                <ul>
-                  <li
-                    className="pro-menu-item pro-sub-menu"
-                  >
-                    <div
-                      className="pro-inner-item"
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <span
-                        className="pro-item-content"
-                      >
-                        Sort Results By:
-                      </span>
-                      <span
-                        className="pro-arrow-wrapper"
-                      >
-                        <span
-                          className="pro-arrow"
-                        />
-                      </span>
-                    </div>
-                    <div
-                      className="react-slidedown pro-inner-list-item"
-                      onTransitionEnd={[Function]}
-                    >
-                      <div>
-                        <ul>
-                          <li
-                            className="pro-menu-item"
-                          >
-                            <div
-                              className="pro-inner-item"
-                              role="button"
-                              tabIndex={0}
-                            >
-                              <span
-                                className="pro-item-content"
-                              >
-                                User Ratings
-                              </span>
-                            </div>
-                          </li>
-                           
-                          <li
-                            className="pro-menu-item"
-                          >
-                            <div
-                              className="pro-inner-item"
-                              role="button"
-                              tabIndex={0}
-                            >
-                              <span
-                                className="pro-item-content"
-                              >
-                                Reviews Quantity
-                              </span>
-                            </div>
-                          </li>
-                           
                         </ul>
                       </div>
                     </div>
@@ -1346,13 +1081,18 @@ exports[`Search Result Page Renders properly 1`] = `
       </div>
     </div>
     <div
-      className="col-sm-10"
+      className="pr-0 col"
     >
+      <h1
+        className="searchTableHeader"
+      >
+        Search Results
+      </h1>
       <div
         className="table-responsive"
       >
         <table
-          className="table table-bordered table-hover"
+          className="searchTableStyles table table-bordered table-hover"
         >
           <thead>
             <tr>
@@ -1363,22 +1103,37 @@ exports[`Search Result Page Renders properly 1`] = `
                 Title
               </th>
               <th>
+                Document Type
+              </th>
+              <th>
                 Authors
               </th>
               <th>
                 Journals
               </th>
               <th>
-                Publishers
+                Publisher
               </th>
               <th>
                 Volume
               </th>
               <th>
-                Pages
+                Article Page/s
               </th>
               <th>
                 Publish Date
+              </th>
+              <th>
+                SE Methodologies
+              </th>
+              <th>
+                SE Methods
+              </th>
+              <th>
+                Research Methods
+              </th>
+              <th>
+                Research Participants
               </th>
               <th>
                 Article Link

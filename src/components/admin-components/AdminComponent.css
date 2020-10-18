@@ -26,7 +26,7 @@
 }
 
 .adminTableStyles td {
-  max-width: 450px;
+  max-width: 200px;
   white-space: nowrap;
   overflow: auto;
   text-overflow: inherit;
