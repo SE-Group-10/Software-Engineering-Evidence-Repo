@@ -47,8 +47,8 @@ class NavBar2 extends React.Component {
                   <Nav.Link className="nav-link">Dashboard</Nav.Link>
                 </LinkContainer>
               )}
-            <LinkContainer to="/search">
-              <Nav.Link> Advanced Search</Nav.Link>
+            <LinkContainer to="/search-result">
+              <Nav.Link>Advanced Search</Nav.Link>
             </LinkContainer>
           </Nav>
           <img

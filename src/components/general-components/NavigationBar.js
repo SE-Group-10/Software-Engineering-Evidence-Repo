@@ -71,7 +71,6 @@ class NavigationBar extends React.Component {
             <Form inline id="navbar-search" onSubmit={this.onSubmit}>
               <Form.Group controlId="title">
                 <FormControl
-                  required
                   type="text"
                   placeholder="Enter a keyword to quick search"
                   className="mr-sm-2 ml-2"
@@ -80,7 +79,7 @@ class NavigationBar extends React.Component {
                 />
                 <Button variant="outline-success" type="submit">
                   {" "}
-                  <img
+                  <img  
                     alt="search"
                     src={require("../../assets/icons/search_icon.svg")}
                     id="search_icon"

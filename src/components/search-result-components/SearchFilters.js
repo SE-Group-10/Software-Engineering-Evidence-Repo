@@ -21,9 +21,12 @@ class SearchFilters extends React.Component {
       linkSearch: "",
       methodology: "",
       method: "",
+      publishDate: "",
       researchMethod: "",
       chosenResearchParticipant: "",
       evidenceItem: "",
+      minDate: "",
+      maxDate: "",
     };
 
     // Prevents Memory Leaks
@@ -82,53 +85,75 @@ class SearchFilters extends React.Component {
     });
   };
 
+  buildQuery = (searchQuery, header, data) => {
+    return searchQuery.length > 0
+      ? searchQuery.concat(`&${header}=` + data)
+      : searchQuery.concat(`${header}=` + data);
+  };
+
   onSubmit = (event) => {
     event.preventDefault();
     // evidenceItem: "",
 
     let searchQuery = "";
     if (this.state.titleSearch) {
-      searchQuery = searchQuery.concat("title=" + this.state.titleSearch);
+      searchQuery = this.buildQuery(
+        searchQuery,
+        "title",
+        this.state.titleSearch
+      );
     }
     if (this.state.authorSearch) {
-      searchQuery =
-        searchQuery.length > 0
-          ? searchQuery.concat("&author=" + this.state.authorSearch)
-          : searchQuery.concat("author=" + this.state.authorSearch);
+      searchQuery = this.buildQuery(
+        searchQuery,
+        "author",
+        this.state.authorSearch
+      );
     }
     if (this.state.linkSearch) {
-      searchQuery =
-        searchQuery.length > 0
-          ? searchQuery.concat("&article_link=" + this.state.linkSearch)
-          : searchQuery.concat("article_link=" + this.state.linkSearch);
+      searchQuery = this.buildQuery(
+        searchQuery,
+        "article_link",
+        this.state.linkSearch
+      );
     }
     if (this.state.methodology) {
-      searchQuery =
-        searchQuery.length > 0
-          ? searchQuery.concat("&methodology=" + this.state.methodology)
-          : searchQuery.concat("methodology=" + this.state.methodology);
+      searchQuery = this.buildQuery(
+        searchQuery,
+        "methodology",
+        this.state.methodology
+      );
     }
     if (this.state.method) {
-      searchQuery =
-        searchQuery.length > 0
-          ? searchQuery.concat("&method=" + this.state.method)
-          : searchQuery.concat("method=" + this.state.method);
+      searchQuery = this.buildQuery(searchQuery, "method", this.state.method);
     }
     if (this.state.researchMethod) {
-      searchQuery =
-        searchQuery.length > 0
-          ? searchQuery.concat("&research_method=" + this.state.researchMethod)
-          : searchQuery.concat("research_method=" + this.state.researchMethod);
+      searchQuery = this.buildQuery(
+        searchQuery,
+        "research_method",
+        this.state.researchMethod
+      );
     }
     if (this.state.chosenResearchParticipant) {
-      searchQuery =
-        searchQuery.length > 0
-          ? searchQuery.concat(
-              "&participant=" + this.state.chosenResearchParticipant
-            )
-          : searchQuery.concat(
-              "participant=" + this.state.chosenResearchParticipant
-            );
+      searchQuery = this.buildQuery(
+        searchQuery,
+        "participant",
+        this.state.chosenResearchParticipant
+      );
+    }
+    if (this.state.minDate) {
+      searchQuery = this.buildQuery(
+        searchQuery,
+        "min_date",
+        this.state.minDate
+      );
+    }
+    if (this.state.maxDate) {
+      searchQuery = this.buildQuery(
+        searchQuery,
+        "max_date",
+        this.state.maxDate
+      );
     }
     this.setState({
       searchQuery: searchQuery,
@@ -208,7 +233,7 @@ class SearchFilters extends React.Component {
       <ProSidebar>
         <SidebarHeader>
           <Menu>
-            <SubMenu title="Search Filters:">
+            <SubMenu open="true" title="Search Filters:">
               <Form onSubmit={this.onSubmit}>
                 <Row>
                   <Form.Group controlId="researchMethod">
@@ -273,13 +298,43 @@ class SearchFilters extends React.Component {
                 <Row>
                   <Form.Label>Publication Details: </Form.Label>
                   <Form.Group controlId="authorSearch">
-                    <Form.Control type="text" placeholder="Author" />
+                    <Form.Control
+                      type="text"
+                      placeholder="Author"
+                      onChange={this.formOnChangeHandler}
+                    />
                   </Form.Group>
                   <Form.Group controlId="titleSearch">
-                    <Form.Control type="text" placeholder="Title" />
+                    <Form.Control
+                      type="text"
+                      placeholder="Title"
+                      onChange={this.formOnChangeHandler}
+                    />
                   </Form.Group>
                   <Form.Group controlId="linkSearch">
-                    <Form.Control type="text" placeholder="URL or DOI" />
+                    <Form.Control
+                      type="text"
+                      placeholder="URL or DOI"
+                      onChange={this.formOnChangeHandler}
+                    />
+                  </Form.Group>
+                </Row>
+                <Row>
+                  <Form.Label>Min Date: </Form.Label>
+                  <Form.Group controlId="minDate">
+                    <Form.Control
+                      type="month"
+                      placeholder="Author"
+                      onChange={this.formOnChangeHandler}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="maxDate">
+                    <Form.Label>Max Date: </Form.Label>
+                    <Form.Control
+                      type="month"
+                      placeholder="Title"
+                      onChange={this.formOnChangeHandler}
+                    />
                   </Form.Group>
                 </Row>
                 <Button className="seer-button-styling" type="submit">

@@ -39,12 +39,12 @@ exports[`Home Page Renders properly 1`] = `
       >
         <a
           className="nav-link"
-          data-rb-event-key="/search"
-          href="/search"
+          data-rb-event-key="/search-result"
+          href="/search-result"
           onClick={[Function]}
           onKeyDown={[Function]}
         >
-           Advanced Search
+          Advanced Search
         </a>
       </div>
       <img
@@ -324,12 +324,12 @@ exports[`Search Page Renders properly 1`] = `
       >
         <a
           className="nav-link"
-          data-rb-event-key="/search"
-          href="/search"
+          data-rb-event-key="/search-result"
+          href="/search-result"
           onClick={[Function]}
           onKeyDown={[Function]}
         >
-           Advanced Search
+          Advanced Search
         </a>
       </div>
       <img
@@ -384,7 +384,7 @@ exports[`Search Page Renders properly 1`] = `
                 >
                   <ul>
                     <li
-                      className="pro-menu-item pro-sub-menu"
+                      className="pro-menu-item pro-sub-menu open"
                     >
                       <div
                         className="pro-inner-item"
@@ -548,6 +548,7 @@ exports[`Search Page Renders properly 1`] = `
                                   <input
                                     className="form-control"
                                     id="authorSearch"
+                                    onChange={[Function]}
                                     placeholder="Author"
                                     type="text"
                                   />
@@ -558,6 +559,7 @@ exports[`Search Page Renders properly 1`] = `
                                   <input
                                     className="form-control"
                                     id="titleSearch"
+                                    onChange={[Function]}
                                     placeholder="Title"
                                     type="text"
                                   />
@@ -568,8 +570,46 @@ exports[`Search Page Renders properly 1`] = `
                                   <input
                                     className="form-control"
                                     id="linkSearch"
+                                    onChange={[Function]}
                                     placeholder="URL or DOI"
                                     type="text"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                className="row"
+                              >
+                                <label
+                                  className="form-label"
+                                >
+                                  Min Date: 
+                                </label>
+                                <div
+                                  className="form-group"
+                                >
+                                  <input
+                                    className="form-control"
+                                    id="minDate"
+                                    onChange={[Function]}
+                                    placeholder="Author"
+                                    type="month"
+                                  />
+                                </div>
+                                <div
+                                  className="form-group"
+                                >
+                                  <label
+                                    className="form-label"
+                                    htmlFor="maxDate"
+                                  >
+                                    Max Date: 
+                                  </label>
+                                  <input
+                                    className="form-control"
+                                    id="maxDate"
+                                    onChange={[Function]}
+                                    placeholder="Title"
+                                    type="month"
                                   />
                                 </div>
                               </div>
@@ -864,7 +904,7 @@ exports[`Search Result Page Renders properly 1`] = `
               >
                 <ul>
                   <li
-                    className="pro-menu-item pro-sub-menu"
+                    className="pro-menu-item pro-sub-menu open"
                   >
                     <div
                       className="pro-inner-item"
@@ -1028,6 +1068,7 @@ exports[`Search Result Page Renders properly 1`] = `
                                 <input
                                   className="form-control"
                                   id="authorSearch"
+                                  onChange={[Function]}
                                   placeholder="Author"
                                   type="text"
                                 />
@@ -1038,6 +1079,7 @@ exports[`Search Result Page Renders properly 1`] = `
                                 <input
                                   className="form-control"
                                   id="titleSearch"
+                                  onChange={[Function]}
                                   placeholder="Title"
                                   type="text"
                                 />
@@ -1048,8 +1090,46 @@ exports[`Search Result Page Renders properly 1`] = `
                                 <input
                                   className="form-control"
                                   id="linkSearch"
+                                  onChange={[Function]}
                                   placeholder="URL or DOI"
                                   type="text"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              className="row"
+                            >
+                              <label
+                                className="form-label"
+                              >
+                                Min Date: 
+                              </label>
+                              <div
+                                className="form-group"
+                              >
+                                <input
+                                  className="form-control"
+                                  id="minDate"
+                                  onChange={[Function]}
+                                  placeholder="Author"
+                                  type="month"
+                                />
+                              </div>
+                              <div
+                                className="form-group"
+                              >
+                                <label
+                                  className="form-label"
+                                  htmlFor="maxDate"
+                                >
+                                  Max Date: 
+                                </label>
+                                <input
+                                  className="form-control"
+                                  id="maxDate"
+                                  onChange={[Function]}
+                                  placeholder="Title"
+                                  type="month"
                                 />
                               </div>
                             </div>
@@ -1099,44 +1179,122 @@ exports[`Search Result Page Renders properly 1`] = `
               <th>
                 #
               </th>
-              <th>
-                Title
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Title
+                   
+                  
+                </u>
               </th>
-              <th>
-                Document Type
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Document Type
+                   
+                  
+                </u>
               </th>
-              <th>
-                Authors
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Authors
+                   
+                  
+                </u>
               </th>
-              <th>
-                Journals
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Journals
+                   
+                  
+                </u>
               </th>
-              <th>
-                Publisher
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Publisher
+                   
+                  
+                </u>
               </th>
-              <th>
-                Volume
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Volume
+                   
+                  
+                </u>
               </th>
-              <th>
-                Article Page/s
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Article Page/s
+                   
+                  
+                </u>
               </th>
-              <th>
-                Publish Date
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Publish Date
+                   
+                  
+                </u>
               </th>
-              <th>
-                SE Methodologies
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  SE Methodologies
+                   
+                  
+                </u>
               </th>
-              <th>
-                SE Methods
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  SE Methods
+                   
+                  
+                </u>
               </th>
-              <th>
-                Research Methods
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Research Methods
+                   
+                  
+                </u>
               </th>
-              <th>
-                Research Participants
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Research Participants
+                   
+                  
+                </u>
               </th>
-              <th>
-                Article Link
+              <th
+                onClick={[Function]}
+              >
+                <u>
+                  Article Link
+                   
+                  
+                </u>
               </th>
             </tr>
           </thead>

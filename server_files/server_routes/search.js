@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
     stage: "approved",
     $and: [],
   };
-  console.log(req.query);
+
   if (req.query.title) {
     searchQuery.$and.push({
       title: { $regex: `${req.query.title}`, $options: "i" },
@@ -19,16 +19,31 @@ router.get("/", async (req, res) => {
       authors: { $regex: `${req.query.authors}`, $options: "i" },
     });
   }
+  if (req.query.article_link) {
+    searchQuery.$and.push({
+      article_link: { $regex: `${req.query.article_link}`, $options: "i" },
+    });
+  }
   if (req.query.publisher) {
     searchQuery.$and.push({
       publisher: { $regex: `${req.query.publisher}`, $options: "i" },
     });
   }
+
   if (req.query.min_date && req.query.max_date) {
     searchQuery.$and.push({
       publish_date: { $gte: req.query.min_date, $lte: req.query.max_date },
     });
+  } else if (req.query.min_date) {
+    searchQuery.$and.push({
+      publish_date: { $gte: req.query.min_date },
+    });
+  } else if (req.query.max_date) {
+    searchQuery.$and.push({
+      publish_date: { $lte: req.query.max_date },
+    });
   }
+
   if (req.query.methodology_name) {
     searchQuery.$and.push({
       methodologies: {
@@ -78,11 +93,9 @@ router.get("/", async (req, res) => {
     });
   }
 
-  console.log(searchQuery);
   try {
-    const resultArticle = await Article.find(searchQuery, (err, docs) => {
+    await Article.find(searchQuery, (err, docs) => {
       if (!err) {
-        console.log(docs);
         res.json(docs);
       }
     });

@@ -3,13 +3,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import NavigationBar from "./general-components/NavigationBar";
 import HomePage from "./pages/HomePage.js";
-import SearchPage from "./pages/SearchPage.js";
+import SearchResultPage from "./pages/SearchResultPage.js";
 import DashboardPage from "./pages/DashboardPage";
 import AdminPage from "./pages/AdminPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import SubmissionPage from "./pages/SubmissionPage";
-import SearchResultPage from "./pages/SearchResultPage";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import AnalystQueuePage from "./pages/AnalystQueuePage";
 import ScrollToTop from "./general-components/ScrollToTop";
@@ -47,7 +46,6 @@ function App() {
           <Redirect to="/home" />
         </Route>
         <Route path="/home" component={HomePage} />
-        <Route path="/search" component={SearchPage} />
 
         {/* Register-Login Pages */}
         <Route

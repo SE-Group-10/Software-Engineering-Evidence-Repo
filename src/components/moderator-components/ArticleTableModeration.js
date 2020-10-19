@@ -148,7 +148,7 @@ class ArticleTableModeration extends React.Component {
           <tr key={index}>
             <td>{index + 1}</td>
             <td>{article.title}</td>
-            <td>{article.document_type}</td>
+            <td>{article.document_type.join(", ")}</td>
             <td>{article.authors.join(", ")}</td>
             <td>{article.journals.join(", ")}</td>
             <td>{article.publisher}</td>

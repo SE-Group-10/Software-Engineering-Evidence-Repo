@@ -18,6 +18,13 @@
   white-space: nowrap;
 }
 
+.searchTableStyles thead th {
+  cursor: pointer;
+}
+.searchTableStyles thead th:hover {
+  color: #00994c;
+}
+
 .searchTableStyles td {
   max-width: 300px;
   white-space: nowrap;
