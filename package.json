@@ -39,7 +39,6 @@
     },
     "scripts": {
         "start": "node server.js",
-        "prestart": "npm run build",
         "local": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --passWithNoTests",
