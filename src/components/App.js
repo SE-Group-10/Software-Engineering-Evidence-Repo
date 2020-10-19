@@ -1,34 +1,84 @@
 import "./App.css";
 import React from "react";
+import { useSelector } from "react-redux";
 import NavigationBar from "./general-components/NavigationBar";
 import HomePage from "./pages/HomePage.js";
-import SearchPage from "./pages/SearchPage.js";
+import SearchResultPage from "./pages/SearchResultPage.js";
 import DashboardPage from "./pages/DashboardPage";
+import AdminPage from "./pages/AdminPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
-import { Container } from "react-bootstrap";
-import { Switch, Route, Redirect } from "react-router-dom";
+import SubmissionPage from "./pages/SubmissionPage";
+import { Switch, Route, Redirect, useLocation } from "react-router-dom";
+import AnalystQueuePage from "./pages/AnalystQueuePage";
+import ScrollToTop from "./general-components/ScrollToTop";
+import ModeratorPage from "./pages/ModeratorPage";
 
 function App() {
-  return (
-    <div className="App">
+  const location = useLocation();
+  let isLoggedIn = useSelector((state) => state.seerUserReducer.isLoggedIn);
+  const DefaultNavPages = () => (
+    <div>
       <NavigationBar />
-      <Container fluid className="App-header">
-        <Switch>
-          {/* General Pages */}
-          <Route exact path={["/index.html", "/"]}>
-            <Redirect to="/home" />
-          </Route>
-          <Route path="/home" component={HomePage} />
-          <Route path="/search" component={SearchPage} />
-          <Route path="/dashboard" component={DashboardPage} />
+      <Switch location={location} key={location.pathname}>
+        <Route
+          path="/dashboard"
+          render={(props) =>
+            isLoggedIn ? <DashboardPage {...props} /> : <Redirect to="/home" />
+          }
+        />
+        <Route path="/admin" component={AdminPage} />
+        <Route path="/article-posting" component={SubmissionPage} />
 
-          {/* Register-Login Pages */}
-          <Route path="/login" component={LoginPage} />
-          <Route path="/sign-up" component={SignUpPage} />
-        </Switch>
-      </Container>
+        {/* Analyst Pages */}
+        <Route path="/analyst-queue" component={AnalystQueuePage} />
+
+        <Route path="/moderator"  component={ModeratorPage} />
+
+        {/* Search Results Page */}
+        <Route path="/search-result" component={SearchResultPage} />
+      </Switch>
     </div>
+  );
+
+  const NoSearchNavPages = () => (
+    <div>
+      <Switch location={location} key={location.pathname}>
+        {/* General Pages */}
+        <Route exact path={["/index.html", "/"]}>
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/home" component={HomePage} />
+
+        {/* Register-Login Pages */}
+        <Route
+          path="/login"
+          render={(props) =>
+            !isLoggedIn ? <LoginPage {...props} /> : <Redirect to="/home" />
+          }
+        />
+        <Route
+          path="/sign-up"
+          render={(props) =>
+            !isLoggedIn ? <SignUpPage {...props} /> : <Redirect to="/home" />
+          }
+        />
+
+        <Route component={DefaultNavPages} />
+      </Switch>
+    </div>
+  );
+
+  return (
+    <ScrollToTop>
+      <Route>
+        <Switch location={location} key={location.pathname}>
+          <Route component={NoSearchNavPages} />
+          <Route component={DefaultNavPages} />
+          <Route path="" />
+        </Switch>
+      </Route>
+    </ScrollToTop>
   );
 }
 

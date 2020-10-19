@@ -1,13 +1,83 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.seer-header-styling {
+  color: #00994c !important;
+}
+
+.seer-button-styling {
+  background-color: #00994c !important;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.seer-button-styling:hover {
+  background-color: #018644 !important;
+}
+
+.swal-button--cancel {
+  padding: 7px 19px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.swal-button--confirm {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #00994c;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.swal-button--confirm:hover {
+  background-color: #018644 !important;
+}
+
+.addRowButton {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.multiFormStyle {
+  text-align: left;
+}
+
+.checkboxFormStyle {
+  max-height: 140px;
+  overflow-y: scroll;
+}
+
+hr {
+  height: 1px !important;
+  border-width: 0;
+  color: gray;
+  background-color: gray;
+}
+
+.tabsStyle a.nav-link {
+  border-color: #018644 !important;
+  color: white !important;
+  background-color: #00994c !important;
+}
+
+.tabsStyle a.nav-link:hover {
+  border-color: black !important;
+  color: white !important;
+  background-color: #03924a !important;
+}
+
+.nav-tabs .nav-link {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }

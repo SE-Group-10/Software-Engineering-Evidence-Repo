@@ -10,7 +10,6 @@ router.get("/", async (req, res) => {
   } catch (err) {
     res.json({ message: err });
   }
-  res.send("We are on Research Participants");
 });
 
 // SUBMIT A RESEARCH PARTICIPANT

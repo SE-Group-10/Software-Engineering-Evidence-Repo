@@ -1,0 +1,35 @@
+.searchSectionStyle {
+  display: inline-block;
+  padding-right: 5%;
+}
+.searchFilterResult {
+  padding: 0;
+}
+.searchTableHeader {
+  margin-top: 50px;
+  color: #00994c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.searchTableStyles thead {
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.searchTableStyles thead th {
+  cursor: pointer;
+}
+.searchTableStyles thead th:hover {
+  color: #00994c;
+}
+
+.searchTableStyles td {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: inherit;
+  text-align: center;
+  vertical-align: middle;
+}

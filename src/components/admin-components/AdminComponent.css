@@ -1,0 +1,36 @@
+.adminTableHeader {
+  margin-top: 50px;
+  color: #00994c;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.adminUserActions {
+  margin-right: 10px;
+}
+
+.adminTableStyles thead {
+  text-align: center;
+}
+
+.adminSectionStyle {
+  display: inline-block;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.adminTableStyles thead {
+  text-align: center;
+  overflow: auto !important;
+  white-space: nowrap;
+}
+
+.adminTableStyles td {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: inherit;
+  text-align: center;
+  vertical-align: middle;
+}
+

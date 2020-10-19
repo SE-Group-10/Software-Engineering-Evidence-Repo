@@ -1,0 +1,31 @@
+.moderatorSectionStyle {
+  display: inline-block;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.moderatorTableHeader {
+  margin-top: 50px;
+  color: #00994c;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.moderatorUserActions {
+  margin-right: 10px;
+}
+
+.moderatorTableStyles thead {
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.moderatorTableStyles td {
+  max-width: 275px;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: inherit;
+  text-align: center;
+  vertical-align: middle;
+}

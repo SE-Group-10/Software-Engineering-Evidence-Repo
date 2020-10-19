@@ -1,5 +1,28 @@
 .navBar {
-    margin-bottom: 40px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  color: #00994c;
+}
+
+.nav_button {
+  background-color: #00994c !important;
+  margin-left: 1em;
+}
+
+.nav_button:hover {
+  background-color: #00cc80 !important;
+}
+
+#navbar_logo {
+  height: auto;
+  width: 5em;
+}
+
+#login_placeholder {
+  width: 3em;
+  height: auto;
 }
