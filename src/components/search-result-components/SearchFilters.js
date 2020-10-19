@@ -328,6 +328,8 @@ class SearchFilters extends React.Component {
                       onChange={this.formOnChangeHandler}
                     />
                   </Form.Group>
+                </Row>
+                <Row>
                   <Form.Group controlId="maxDate">
                     <Form.Label>Max Date: </Form.Label>
                     <Form.Control
