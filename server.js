@@ -56,13 +56,13 @@ app.get("/:file", function (req, res) {
 });
 
 // Connect to DB
-// mongoose.connect(
-//   `mongodb+srv://${username}:${password}@se-cluster.e94oc.mongodb.net/${dbname}?retryWrites=true&w=majorityCopy`,
-//   { useNewUrlParser: true, useUnifiedTopology: true },
-//   () => {
-//     console.log("Connected to DB!");
-//   }
-// );
+mongoose.connect(
+  `mongodb+srv://${username}:${password}@se-cluster.e94oc.mongodb.net/${dbname}?retryWrites=true&w=majorityCopy`,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("Connected to DB!");
+  }
+);
 
 console.log(PORT);
 app.listen(PORT);
