@@ -1,6 +1,8 @@
 import "./AnalystComponent.css";
 import React from "react";
 import { Container, Table, Button, Form, Row, Col } from "react-bootstrap";
+import { init } from "emailjs-com";
+import emailjs from "emailjs-com";
 import swal from "@sweetalert/with-react";
 import api from "../../api/api";
 
@@ -598,6 +600,22 @@ class ArticlesTableAnalyst extends React.Component {
   };
 
   render() {
+    init("user_ZuCRyzWfalPE8iWX4tLWc");
+    var emailParams = {
+      from_name: 'SEER Administration',
+      to_name: 'SEER Analyst',
+      message: 'There are new articles in the queue! Please review them at your earliest convienience.',
+    }
+
+    if (this.state.articles && this.state.articles.length) {
+      emailjs.send("service_r51m1de", "template_76mpnxr", emailParams)
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+          console.log('FAILED...', error);
+        });
+    }
+
     const monthNames = [
       "January",
       "February",
