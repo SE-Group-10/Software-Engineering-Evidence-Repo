@@ -129,7 +129,6 @@ class ArticleTableModeration extends React.Component {
 
   render() {
     init("user_ZuCRyzWfalPE8iWX4tLWc");
-
     var emailParams = {
       from_name: "SEER Administration",
       to_name: "SEER Moderator",
