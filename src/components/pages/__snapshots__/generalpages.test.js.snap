@@ -579,14 +579,15 @@ exports[`Search Page Renders properly 1`] = `
                               <div
                                 className="row"
                               >
-                                <label
-                                  className="form-label"
-                                >
-                                  Min Date: 
-                                </label>
                                 <div
                                   className="form-group"
                                 >
+                                  <label
+                                    className="form-label"
+                                    htmlFor="minDate"
+                                  >
+                                    Min Date: 
+                                  </label>
                                   <input
                                     className="form-control"
                                     id="minDate"
@@ -1103,14 +1104,15 @@ exports[`Search Result Page Renders properly 1`] = `
                             <div
                               className="row"
                             >
-                              <label
-                                className="form-label"
-                              >
-                                Min Date: 
-                              </label>
                               <div
                                 className="form-group"
                               >
+                                <label
+                                  className="form-label"
+                                  htmlFor="minDate"
+                                >
+                                  Min Date: 
+                                </label>
                                 <input
                                   className="form-control"
                                   id="minDate"

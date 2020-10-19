@@ -320,8 +320,8 @@ class SearchFilters extends React.Component {
                   </Form.Group>
                 </Row>
                 <Row>
-                  <Form.Label>Min Date: </Form.Label>
                   <Form.Group controlId="minDate">
+                    <Form.Label>Min Date: </Form.Label>
                     <Form.Control
                       type="month"
                       placeholder="Author"
