@@ -64,4 +64,6 @@ mongoose.connect(
   }
 );
 
+console.log(PORT);
+
 app.listen(PORT);
