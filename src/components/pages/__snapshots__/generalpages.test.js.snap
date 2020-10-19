@@ -595,6 +595,10 @@ exports[`Search Page Renders properly 1`] = `
                                     type="month"
                                   />
                                 </div>
+                              </div>
+                              <div
+                                className="row"
+                              >
                                 <div
                                   className="form-group"
                                 >
@@ -1115,6 +1119,10 @@ exports[`Search Result Page Renders properly 1`] = `
                                   type="month"
                                 />
                               </div>
+                            </div>
+                            <div
+                              className="row"
+                            >
                               <div
                                 className="form-group"
                               >
