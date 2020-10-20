@@ -1,0 +1,30 @@
+.queueSectionStyle {
+  display: inline-block;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.queueTableHeader {
+  margin-top: 50px;
+  color: #00994c;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.queueUserActions {
+  margin-right: 10px;
+}
+
+.queueTableStyles thead {
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+.queueTableStyles td {
+  max-width: 275px;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: inherit;
+  text-align: center;
+  vertical-align: middle;
+}

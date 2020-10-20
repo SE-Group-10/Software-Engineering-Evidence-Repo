@@ -5,6 +5,9 @@ const ArticleSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  assigned_to: {
+    type: String,
+  },
   stage: {
     type: String,
     required: true,

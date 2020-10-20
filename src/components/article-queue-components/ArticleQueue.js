@@ -1,11 +1,13 @@
-import "./ModeratorComponent.css";
+import "./ArticleQueue.css";
 import React from "react";
-import { connect } from "react-redux";
 import { Container, Table, Button } from "react-bootstrap";
+import { connect } from "react-redux";
+import { init } from "emailjs-com";
+import emailjs from "emailjs-com";
 import swal from "@sweetalert/with-react";
 import api from "../../api/api";
 
-class ArticleTableModeration extends React.Component {
+class ArticleQueue extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,13 +22,24 @@ class ArticleTableModeration extends React.Component {
     this._isMounted = false;
   }
 
-  // Function to Get All The Articles for Moderation from the Server
-  getAllModeratorArticles = async () => {
+  // Function to Get All The Articles in the Queue from the Server
+  getAllQueueArticles = async () => {
     try {
-      const moderationArticles = await api.get(
-        "/articles?stage=moderation&assigned_to=" +
-          this.props.user_information._id
-      );
+      let stage = "";
+      switch (this.props.user_information.user_type) {
+        case "moderator":
+          stage = "moderation";
+          break;
+          
+        case "analyst":
+          stage = "analysis";
+          break;
+
+        default:
+          break;
+      }
+
+      const queueArticles = await api.get("/articles?stage=" + stage);
       const methodologiesResponse = await api.get("/methodologies");
       const methodsResponse = await api.get("/methods");
       const rschMethodsResponse = await api.get("/research_methods");
@@ -35,7 +48,7 @@ class ArticleTableModeration extends React.Component {
       // Setting the Articles State
       this._isMounted &&
         this.setState({
-          articles: moderationArticles.data,
+          articles: queueArticles.data,
           methodologies: methodologiesResponse.data,
           methods: methodsResponse.data,
           research_methods: rschMethodsResponse.data,
@@ -54,34 +67,34 @@ class ArticleTableModeration extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
-    this._isMounted && this.getAllModeratorArticles();
+    this._isMounted && this.getAllQueueArticles();
   }
 
   componentWillUnmount() {
     this._isMounted = false;
   }
 
-  approveArticle = (article_id) => {
-    // Warning if the moderator wants to be sure in the approval
+  assignArticle = (article_id) => {
+    // Warning if the user wants to assign it to himself/herself
     swal({
-      title: "Are you sure you want to approve Article?",
-      text: "This article will be put into the Analysis Stage.",
+      title: "Are you sure you want to assign Article to yourself?",
+      text: "This article will be put into your Dashboard.",
       icon: "warning",
       buttons: ["No", "Yes"],
     }).then(async (value) => {
       if (value === true) {
         try {
           await api.patch("/articles/" + article_id, {
-            stage: "analysis",
+            assigned_to: this.props.user_information._id,
           });
           // No Problems with Approval
           swal({
-            title: "Successful Approval!",
-            text: "Article Successfully Put into the Analysis Stage!",
+            title: "Successful Assignment!",
+            text: "Article Successfully assigned to yourself!",
             icon: "success",
             buttons: [false, true],
           });
-          this.getAllModeratorArticles();
+          this.getAllQueueArticles();
         } catch (error) {
           // Error with Approval
           swal({
@@ -95,41 +108,37 @@ class ArticleTableModeration extends React.Component {
     });
   };
 
-  rejectArticle = (article_id) => {
-    // Warning if the moderator wants to be sure in the rejection
-    swal({
-      title: "Are you sure you want to reject Article?",
-      text: "This article will be put into a Rejected Stage.",
-      icon: "warning",
-      buttons: ["No", "Yes"],
-    }).then(async (value) => {
-      if (value === true) {
-        try {
-          await api.patch("/articles/" + article_id, {
-            stage: "rejected",
-          });
-          // No Problems with Rejection
-          swal({
-            title: "Successful Rejection!",
-            text: "Article Successfully Put to Rejection Stage!",
-            icon: "success",
-            buttons: [false, true],
-          });
-          this.getAllModeratorArticles();
-        } catch (error) {
-          // Error with Rejection
-          swal({
-            title: "Unsuccessful Rejection!",
-            text: error?.response?.data || "Unknown Error",
-            icon: "error",
-            buttons: [false, true],
-          });
-        }
-      }
-    });
-  };
-
   render() {
+    init("user_ZuCRyzWfalPE8iWX4tLWc");
+
+    var emailParams = {};
+    if (this.props.user_type === "moderator") {
+      emailParams = {
+        from_name: "SEER Administration",
+        to_name: "SEER Moderator",
+        message:
+          "There are new articles in the queue! Please review them at your earliest convienience.",
+      };
+    } else if (this.props.user_type === "analyst") {
+      emailParams = {
+        from_name: "SEER Administration",
+        to_name: "SEER Analyst",
+        message:
+          "There are new articles in the queue! Please review them at your earliest convienience.",
+      };
+    }
+
+    if (this.state.articles && this.state.articles.length) {
+      emailjs.send("service_r51m1de", "template_76mpnxr", emailParams).then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+    }
+
     const monthNames = [
       "January",
       "February",
@@ -199,22 +208,13 @@ class ArticleTableModeration extends React.Component {
             <td>{article.article_link}</td>
             <td>
               <Button
-                className="moderatorUserActions"
-                variant="success"
+                className="queueUserActions"
+                variant="info"
                 onClick={() => {
-                  this.approveArticle(article._id);
+                  this.assignArticle(article._id);
                 }}
               >
-                Approve
-              </Button>
-              <Button
-                className="moderatorUserActions"
-                variant="danger"
-                onClick={() => {
-                  this.rejectArticle(article._id);
-                }}
-              >
-                Reject
+                Assign to Self
               </Button>
             </td>
           </tr>
@@ -223,9 +223,14 @@ class ArticleTableModeration extends React.Component {
     }
 
     return (
-      <Container fluid className="moderatorSectionStyle">
-        <h1 className="moderatorTableHeader">Your Moderator Articles</h1>
-        <Table className="moderatorTableStyles" responsive bordered hover>
+      <Container fluid className="queueSectionStyle">
+        <h1 className="queueTableHeader">
+          Unassigned{" "}
+          {this.props.user_information.user_type.charAt(0).toUpperCase() +
+            this.props.user_information.user_type.slice(1)}{" "}
+          Articles
+        </h1>
+        <Table className="queueTableStyles" responsive bordered hover>
           <thead>
             <tr>
               <th>#</th>
@@ -253,12 +258,10 @@ class ArticleTableModeration extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+  isLoggedIn: state.seerUserReducer.isLoggedIn,
   user_information: state.seerUserReducer.user_information,
 });
 
 const mapDispatchToProps = () => {};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps()
-)(ArticleTableModeration);
+export default connect(mapStateToProps, mapDispatchToProps())(ArticleQueue);

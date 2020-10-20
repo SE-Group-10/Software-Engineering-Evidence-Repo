@@ -6,24 +6,36 @@ const Method = require("../server_models/Method");
 
 // GET ALL THE ARTICLES
 router.get("/", async (req, res) => {
-  if (req.query.stage) {
+  if (req.query.assigned_to) {
     try {
       const article = await Article.find({
         stage: req.query.stage,
-        assigned_to: null,
-      });
-      res.json(article);
-    } catch (err) {
-      res.json({ message: err });
-    }
-  } else if (req.query.assigned_to) {
-    try {
-      const article = await Article.find({
         assigned_to: req.query.assigned_to,
       });
       res.json(article);
     } catch (err) {
       res.json({ message: err });
+    }
+  } else if (req.query.stage) {
+    if (req.query.stage === "approved") {
+      try {
+        const article = await Article.find({
+          stage: req.query.stage,
+        });
+        res.json(article);
+      } catch (err) {
+        res.json({ message: err });
+      }
+    } else {
+      try {
+        const article = await Article.find({
+          stage: req.query.stage,
+          assigned_to: null,
+        });
+        res.json(article);
+      } catch (err) {
+        res.json({ message: err });
+      }
     }
   } else {
     try {
@@ -145,7 +157,9 @@ router.put("/:article_id", async (req, res) => {
   putData.volume_number = req.body.volume_number
     ? parseInt(req.body.volume_number)
     : null;
-  putData.start_page = req.body.start_page ? parseInt(req.body.start_page) : null;
+  putData.start_page = req.body.start_page
+    ? parseInt(req.body.start_page)
+    : null;
   putData.end_page = req.body.end_page ? parseInt(req.body.end_page) : null;
   putData.publish_date = req.body.publish_date ? req.body.publish_date : null;
   putData.article_link = req.body.article_link ? req.body.article_link : null;
@@ -173,14 +187,24 @@ router.put("/:article_id", async (req, res) => {
 
 // HANDLE ARTICLE STAGES
 router.patch("/:article_id", async (req, res) => {
-  let patchData = {
-    stage: req.body.stage,
-    datetime_updated: Date.now(),
-  };
+  let patchData = {};
+  if (req.body.assigned_to) {
+    patchData = {
+      assigned_to: req.body.assigned_to,
+      datetime_updated: Date.now(),
+    };
+  } else {
+    patchData = {
+      stage: req.body.stage,
+      datetime_updated: Date.now(),
+    };
+  }
   try {
     const updatedArticle = await Article.updateOne(
       { _id: req.params.article_id },
-      { $set: patchData }
+      { $set: patchData },
+      { upsert: true, new: true, setDefaultsOnInsert: true },
+      () => {}
     );
     res.json(updatedArticle);
   } catch (err) {
