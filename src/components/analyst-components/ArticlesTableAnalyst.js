@@ -1,8 +1,7 @@
 import "./AnalystComponent.css";
 import React from "react";
 import { Container, Table, Button, Form, Row, Col } from "react-bootstrap";
-import { init } from "emailjs-com";
-import emailjs from "emailjs-com";
+import { connect } from "react-redux";
 import swal from "@sweetalert/with-react";
 import api from "../../api/api";
 
@@ -41,7 +40,10 @@ class ArticlesTableAnalyst extends React.Component {
   // Function to Get All The Articles for Analysis from the Server
   getAllAnalystArticles = async () => {
     try {
-      const analysisArticles = await api.get("/articles?stage=analysis");
+      const analysisArticles = await api.get(
+        "/articles?stage=analysis&assigned_to=" +
+          this.props.user_information._id
+      );
       const methodologiesResponse = await api.get("/methodologies");
       const methodsResponse = await api.get("/methods");
       const rschMethodsResponse = await api.get("/research_methods");
@@ -600,22 +602,6 @@ class ArticlesTableAnalyst extends React.Component {
   };
 
   render() {
-    init("user_ZuCRyzWfalPE8iWX4tLWc");
-    var emailParams = {
-      from_name: 'SEER Administration',
-      to_name: 'SEER Analyst',
-      message: 'There are new articles in the queue! Please review them at your earliest convienience.',
-    }
-
-    if (this.state.articles && this.state.articles.length) {
-      emailjs.send("service_r51m1de", "template_76mpnxr", emailParams)
-        .then(function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-        }, function (error) {
-          console.log('FAILED...', error);
-        });
-    }
-
     const monthNames = [
       "January",
       "February",
@@ -719,7 +705,7 @@ class ArticlesTableAnalyst extends React.Component {
 
     return (
       <Container fluid className="analystSectionStyle">
-        <h1 className="analystTableHeader">Analyst Articles</h1>
+        <h1 className="analystTableHeader">Your Analyst Articles</h1>
         <Table className="analystTableStyles" responsive bordered hover>
           <thead>
             <tr>
@@ -747,4 +733,13 @@ class ArticlesTableAnalyst extends React.Component {
   }
 }
 
-export default ArticlesTableAnalyst;
+const mapStateToProps = (state) => ({
+  user_information: state.seerUserReducer.user_information,
+});
+
+const mapDispatchToProps = () => {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps()
+)(ArticlesTableAnalyst);

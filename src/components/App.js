@@ -10,13 +10,16 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import SubmissionPage from "./pages/SubmissionPage";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
-import AnalystQueuePage from "./pages/AnalystQueuePage";
+import ArticleQueue from "./article-queue-components/ArticleQueue";
 import ScrollToTop from "./general-components/ScrollToTop";
-import ModeratorPage from "./pages/ModeratorPage";
 
 function App() {
   const location = useLocation();
   let isLoggedIn = useSelector((state) => state.seerUserReducer.isLoggedIn);
+  let user_information = useSelector(
+    (state) => state.seerUserReducer.user_information
+  );
+
   const DefaultNavPages = () => (
     <div>
       <NavigationBar />
@@ -29,11 +32,18 @@ function App() {
         />
         <Route path="/admin" component={AdminPage} />
         <Route path="/article-posting" component={SubmissionPage} />
-
-        {/* Analyst Pages */}
-        <Route path="/analyst-queue" component={AnalystQueuePage} />
-
-        <Route path="/moderator"  component={ModeratorPage} />
+        <Route
+          path="/article-queue"
+          render={(props) =>
+            isLoggedIn &&
+            (user_information.user_type === "moderator" ||
+              user_information.user_type === "analyst") ? (
+              <ArticleQueue {...props} />
+            ) : (
+              <Redirect to="/home" />
+            )
+          }
+        />
 
         {/* Search Results Page */}
         <Route path="/search-result" component={SearchResultPage} />

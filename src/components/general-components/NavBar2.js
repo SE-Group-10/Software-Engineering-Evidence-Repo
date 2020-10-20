@@ -47,6 +47,13 @@ class NavBar2 extends React.Component {
                   <Nav.Link className="nav-link">Dashboard</Nav.Link>
                 </LinkContainer>
               )}
+            {this.props.isLoggedIn &&
+              (this.props.user_information.user_type === "moderator" ||
+                this.props.user_information.user_type === "analyst") && (
+                <LinkContainer to="/article-queue">
+                  <Nav.Link className="nav-link">Article Queue</Nav.Link>
+                </LinkContainer>
+              )}
             <LinkContainer to="/search-result">
               <Nav.Link>Advanced Search</Nav.Link>
             </LinkContainer>

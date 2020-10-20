@@ -68,6 +68,13 @@ class NavigationBar extends React.Component {
                   <Nav.Link className="nav-link">Dashboard</Nav.Link>
                 </LinkContainer>
               )}
+            {this.props.isLoggedIn &&
+              (this.props.user_information.user_type === "moderator" ||
+                this.props.user_information.user_type === "analyst") && (
+                <LinkContainer to="/article-queue">
+                  <Nav.Link className="nav-link">Article Queue</Nav.Link>
+                </LinkContainer>
+              )}
             <Form inline id="navbar-search" onSubmit={this.onSubmit}>
               <Form.Group controlId="title">
                 <FormControl
@@ -79,7 +86,7 @@ class NavigationBar extends React.Component {
                 />
                 <Button variant="outline-success" type="submit">
                   {" "}
-                  <img  
+                  <img
                     alt="search"
                     src={require("../../assets/icons/search_icon.svg")}
                     id="search_icon"
