@@ -42,7 +42,6 @@ class SearchResultPage extends React.Component {
       if (Object.keys(queryParams).length === 0) {
         searchResponse = await api.get("articles?stage=approved");
       } else {
-        // Getting the Services and Regions JSON From the Server
         searchResponse = await api.get("/search_article", {
           params: {
             title: queryParams.title,
