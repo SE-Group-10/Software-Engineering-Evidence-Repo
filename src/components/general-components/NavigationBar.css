@@ -5,16 +5,16 @@
   border-bottom-width: 1px;
   border-bottom-color: black;
   border-bottom-style: solid;
-  color: #00994c;
+  color: #0dab76;
 }
 
 .nav_button {
-  background-color: #00994c !important;
+  background-color: #0dab76 !important;
   margin-left: 1em;
 }
 
 .nav_button:hover {
-  background-color: #00cc80 !important;
+  background-color: #0dab76 !important;
 }
 
 #navbar_logo {

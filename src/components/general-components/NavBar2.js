@@ -58,11 +58,6 @@ class NavBar2 extends React.Component {
               <Nav.Link>Advanced Search</Nav.Link>
             </LinkContainer>
           </Nav>
-          <img
-            alt="circle"
-            src={require("../../assets/icons/placeholder_circle.png")}
-            id="login_placeholder"
-          />
           {!this.props.isLoggedIn ? (
             <React.Fragment>
               <LinkContainer to="/login">

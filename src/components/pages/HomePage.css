@@ -1,23 +1,129 @@
 .homepageHeader {
-  text-align: center;
-  padding-top: 15vh;
-  margin-left: 0;
-  padding-left: 0;
-  padding-right: 0;
-  background-image: url("../../assets/homepage_background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  padding-top: 10vh;
+  /* background-image: url("../../assets/homepage_background.jpg"); */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  /* position: relative; */
+}
 
-  position: relative;
-  height: 95vh;
-  width: 100%;
-
-  color: white;
+.homepageHeader .container-fluid {
+  padding-left: 120px !important;
+  padding-right: 120px !important;
 }
 
 .homepageCTA {
   margin-top: 10vh;
   padding-bottom: 5vh;
+}
+
+.welcome-to-seer {
+  text-align: justify;
+}
+
+.welcome-to-seer h1 {
+  color: #0dab76;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 106px;
+}
+
+.welcome-to-seer h3 {
+  color: #7b8898;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.whySectionStyle {
+  margin-top: 175px;
+  background-color: rgba(242, 242, 242, 0.52);
+}
+
+.whySectionStyle .row {
+  padding-bottom: 60px;
+}
+
+.whySectionStyle h1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  color: #0dab76;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.whySectionStyle h2 {
+  text-align: justify;
+  color: #66d976;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.whySectionStyle p {
+  text-align: justify;
+  color: #7b8898;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.memberBenefitsStyle {
+  padding-top: 125px;
+  padding-bottom: 100px;
+  background: linear-gradient(#0dab76, #66d976);
+  color: #fff;
+}
+
+.memberBenefitsStyle h1 {
+  text-align: center;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.memberBenefitsStyle p {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 400;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.memberBenefitsStyle h2 {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.benefitsListStyle p {
+  text-align: justify;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.registerNowStyle {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.registerNowStyle button {
+  font-size: 30px;
+  margin-bottom: 16px;
+  padding: 15px 30px 15px 30px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #0dab76 0%, #66d976 100%);
+  border-color: #0dab76 !important;
+}
+
+.registerNowStyle p {
+  font-size: 30px;
+  color: #828282 !important;
+}
+
+.registerNowStyle a {
+  color: #66d976 !important;
 }
 
 #navbar-search {
